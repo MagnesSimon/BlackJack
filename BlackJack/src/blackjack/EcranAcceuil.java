@@ -116,6 +116,15 @@ public class EcranAcceuil extends JFrame {
 				System.out.println("5 joueurs");
 			}
 		});
+		
+		boutonStart.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new TestJeuDeCartes();
+			}
+		});
 	}
 	
 

@@ -134,7 +134,12 @@ public class TestJeuDeCartes extends JFrame {
 		this.nbJoueurs = nbJoueurs;
 	}
 	
-	
+	// Methode de début de partie
+	public  void startGame()
+	{
+		new TestJeuDeCartes();
+		System.out.println("hi");
+	}
 	/**
 	 * Début de l'exécution du test
 	 * @param args Les paramètre de la ligne de commande
@@ -142,7 +147,8 @@ public class TestJeuDeCartes extends JFrame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		new TestJeuDeCartes();
+		//new TestJeuDeCartes();
+		new EcranAcceuil();
 		
 	}
 
