@@ -148,7 +148,7 @@ public class TestJeuDeCartes extends JFrame {
 		// TODO Auto-generated method stub
 		
 		//new TestJeuDeCartes();
-		new EcranAcceuil();
+		EcranAcceuil ecran = new EcranAcceuil();
 		
 	}
 

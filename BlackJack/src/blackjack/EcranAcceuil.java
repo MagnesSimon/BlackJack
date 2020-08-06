@@ -122,7 +122,10 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new TestJeuDeCartes();
+				System.out.println(getNbJoueurs() + " - nbjoueurs");
+				TestJeuDeCartes jeu = new TestJeuDeCartes();
+				jeu.setNbJoueurs(getNbJoueurs());
+				System.out.println(jeu.getNbJoueurs() + " get");
 			}
 		});
 	}
