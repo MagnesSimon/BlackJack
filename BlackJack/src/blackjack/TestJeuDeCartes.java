@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+
+
 public class TestJeuDeCartes extends JFrame {
 
 	/**
@@ -33,6 +35,11 @@ public class TestJeuDeCartes extends JFrame {
 		// Appel du constructeur de la classe JFrame.
 		super("JeuDeCartes");
 		
+		// Création de l'écran d'acceuil
+		EcranAcceuil acceuil = new EcranAcceuil();
+		
+		
+		
 		// Ajout des composants au container
 		JTextArea zoneSortie = new JTextArea();
 		zoneSortie.setEditable(false);
@@ -41,23 +48,31 @@ public class TestJeuDeCartes extends JFrame {
 		//Texte de sortie
 		StringBuilder sortie = new StringBuilder();
 		
+
+		
 		// Construction du paquet de cartes
 		Paquet paquet = new Paquet();
 		
 		// Création du croupier
 		Croupier croupier = new Croupier(0, false);
-		
+		/*
 		// Création des joueurs
 		Joueur joueur1 = new Joueur(0, false);
 		Joueur joueur2 = new Joueur(0, false);
 		Joueur joueur3 = new Joueur(0, false);
+		*/
 		
-		// Création automatque de joueurs
+		// Création automatique de joueurs
 		sortie.append("Combien de joueurs? (2 - 5)\n");
-		
+		for (int i = 0; i < getNbJoueurs(); i++ )
+		{
+			Joueur joueur = new Joueur(i, 0,false);
+		}
+		sortie.append("Il y a " + getNbJoueurs() + " joueurs! \n");
 		/**
 		 * pioche des deux première cartes
 		 */
+		/*
 		sortie.append("Le joueur 1 pioche 2 cartes. \n");
 		joueur1.main = paquet.piocher(2);
 		for (int i = 0; i< joueur1.main.length ; i++)
@@ -85,7 +100,7 @@ public class TestJeuDeCartes extends JFrame {
 		{
 			sortie.append("- ").append(croupier.main[i]).append("\n");
 		}
-		
+		*/
 		
 		
 		// Met à jour la zone de sortie
@@ -97,10 +112,11 @@ public class TestJeuDeCartes extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
 	
 	public void choisirNbJoueurs()
 	{
-		nbJoueurs = 0;
+		setNbJoueurs(acceuil.getNbJoueurs());
 		
 	}
 	
@@ -126,8 +142,7 @@ public class TestJeuDeCartes extends JFrame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//new TestJeuDeCartes();
-		new EcranAcceuil();
+		new TestJeuDeCartes();
 		
 	}
 

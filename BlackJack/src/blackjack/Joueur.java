@@ -9,6 +9,9 @@ package blackjack;
  */
 public class Joueur {
 	
+	// ID du joueur
+	private int ID;
+	
 	// Cartes en main
 	protected Carte[] main;
 	
@@ -29,7 +32,7 @@ public class Joueur {
 		this.point = point;
 		this.estElimine = false;
 	}
-	public Joueur(int point, boolean estElimine)
+	public Joueur(int ID,int point, boolean estElimine)
 	{
 		this.main = main;
 	}

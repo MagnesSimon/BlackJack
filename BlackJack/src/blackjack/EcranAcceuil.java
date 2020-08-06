@@ -22,6 +22,8 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import blackjack.TestJeuDeCartes;
+
  
 public class EcranAcceuil extends JFrame {
 	// Image
@@ -33,6 +35,8 @@ public class EcranAcceuil extends JFrame {
 	JButton bouton3 = new JButton("3 Joueurs.");
 	JButton bouton4 = new JButton("4 Joueurs.");
 	JButton bouton5 = new JButton("5 Joueurs.");
+	
+	JButton boutonStart = new JButton("Start Game !");
 	
 	
 	private JPanel container = new JPanel();
@@ -49,17 +53,17 @@ public class EcranAcceuil extends JFrame {
 		container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
 
+		JPanel mid = new JPanel();
+		mid.add(label);
+		
 		JPanel top = new JPanel();
-		top.add(label);
+		top.add(bouton2);
+		top.add(bouton3);
+		top.add(bouton4);
+		top.add(bouton5);
 		
-		JPanel bottom = new JPanel();
-		bottom.add(bouton2);
-		bottom.add(bouton3);
-		bottom.add(bouton4);
-		bottom.add(bouton5);
-		
-		container.add(top, BorderLayout.CENTER);
-		container.add(bottom, BorderLayout.NORTH);
+		container.add(mid, BorderLayout.CENTER);
+		container.add(top, BorderLayout.NORTH);
 		this.setContentPane(container);
 		this.setVisible(true); 
 		
@@ -72,6 +76,7 @@ public class EcranAcceuil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				setNbJoueurs(2);
+				
 				System.out.println("2 joueurs");
 			}
 		});
