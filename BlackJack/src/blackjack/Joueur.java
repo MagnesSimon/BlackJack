@@ -41,4 +41,5 @@ public class Joueur {
 		
 		return point;
 	}
+	
 }

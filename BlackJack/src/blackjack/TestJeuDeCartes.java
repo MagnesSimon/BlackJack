@@ -21,6 +21,10 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	private static final long serialVersionUID =1L;
 	
+	// Nombre de joueurs
+	private int nbJoueurs;
+	
+
 	/**
 	 * Construction de l'application
 	 */
@@ -93,6 +97,27 @@ public class TestJeuDeCartes extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	public void choisirNbJoueurs()
+	{
+		nbJoueurs = 0;
+		
+	}
+	
+	/**
+	 * @return the nbJoueurs
+	 */
+	public int getNbJoueurs() {
+		return nbJoueurs;
+	}
+
+	/**
+	 * @param nbJoueurs the nbJoueurs to set
+	 */
+	public void setNbJoueurs(int nbJoueurs) {
+		this.nbJoueurs = nbJoueurs;
+	}
+	
 	
 	/**
 	 * Début de l'exécution du test
