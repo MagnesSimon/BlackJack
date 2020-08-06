@@ -40,45 +40,46 @@ public class TestJeuDeCartes extends JFrame {
 		// Construction du paquet de cartes
 		Paquet paquet = new Paquet();
 		
-		// Affiche le jeu de cartes complet
-		sortie.append("Liste des cartes mélangées. \n\n");
-		String listeMelange = paquet.voirPaquet();
-		sortie.append(listeMelange);
+		// Création du croupier
+		Croupier croupier = new Croupier(0, false);
 		
-		// Pioche 5 cartes
-		sortie.append("Pioche 5 cartes : \n");
-		Carte[] main = paquet.piocher(5);
-		if (main != null)
+		// Création des joueurs
+		Joueur joueur1 = new Joueur(0, false);
+		Joueur joueur2 = new Joueur(0, false);
+		Joueur joueur3 = new Joueur(0, false);
+		
+		/**
+		 * pioche des deux première cartes
+		 */
+		sortie.append("Le joueur 1 pioche 2 cartes. \n");
+		joueur1.main = paquet.piocher(2);
+		for (int i = 0; i< joueur1.main.length ; i++)
 		{
-			for (int i = 0; i < main.length; i++)
-			{
-				sortie.append("- ").append(main[i]).append("\n");
-			}
-		}
-		else
-		{
-			sortie.append("Le nombre de cartes dans le paquet est insuffisant! \n");
+			sortie.append("- ").append(joueur1.main[i]).append("\n");
 		}
 		
-		// Essai de piocher 50 cartes
-		sortie.append("Pioche 50 cartes : \n");
-		Carte[] main1 = paquet.piocher(50);
-		if (main1 != null)
+		sortie.append("Le joueur 2 pioche 2 cartes.\n");
+		joueur2.main = paquet.piocher(2);
+		for (int i = 0; i< joueur2.main.length ; i++)
 		{
-			for (int i = 0; i < main1.length; i++)
-			{
-				sortie.append("- ").append(main1[i]).append("\n");
-			}
-		}
-		else
-		{
-			sortie.append("Le nombre de cartes dans le paquet est insuffisant! \n");
+			sortie.append("- ").append(joueur2.main[i]).append("\n");
 		}
 		
-		// Nombre de cartes
-		int nbCartes = paquet.getNombreCartes();
-		sortie.append("Nombre de cartes restante dans le paquets : ");
-		sortie.append(nbCartes);
+		sortie.append("Le joueur 3 pioche 2 cartes.\n");
+		joueur3.main = paquet.piocher(2);
+		for (int i = 0; i< joueur3.main.length ; i++)
+		{
+			sortie.append("- ").append(joueur3.main[i]).append("\n");
+		}
+		
+		sortie.append("Le croupier pioche 2 cartes. \n");
+		croupier.main = paquet.piocher(2);
+		for (int i = 0; i< croupier.main.length ; i++)
+		{
+			sortie.append("- ").append(croupier.main[i]).append("\n");
+		}
+		
+		
 		
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
@@ -97,6 +98,8 @@ public class TestJeuDeCartes extends JFrame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new TestJeuDeCartes();
+		
+		
 	}
 
 }

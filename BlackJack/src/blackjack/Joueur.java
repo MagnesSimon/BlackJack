@@ -10,23 +10,28 @@ package blackjack;
 public class Joueur {
 	
 	// Cartes en main
-	private Carte[] cartesMain;
+	protected Carte[] main;
 	
 	// Total des points
-	private int point;
+	protected int point;
 	
 	// Boolean pour savoir si le joueur est éliminé
-	private boolean estElimine;
+	protected boolean estElimine;
 	
 	/**
 	 * Constructeur
 	 * @param carteMain Les cartes que le joueurs à en main.
 	 * @param point Le total des point obtenu par les cartes.
 	 */
-	public Joueur(Carte[] cartesMain, int point)
+	public Joueur(Carte[] main, int point)
 	{
-		this.cartesMain = cartesMain;
+		this.main = main;
 		this.point = point;
 		this.estElimine = false;
 	}
+	public Joueur(int point, boolean estElimine)
+	{
+		this.main = main;
+	}
+	
 }
