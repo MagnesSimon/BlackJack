@@ -53,17 +53,24 @@ public class EcranAcceuil extends JFrame {
 		container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
 
+		// JPannel de l'image
 		JPanel mid = new JPanel();
 		mid.add(label);
 		
+		// JPannel des bouton pour le nombre de joueur
 		JPanel top = new JPanel();
 		top.add(bouton2);
 		top.add(bouton3);
 		top.add(bouton4);
 		top.add(bouton5);
 		
+		// JPannel pour le bouton Start
+		JPanel bot = new JPanel();
+		bot.add(boutonStart);
+		
 		container.add(mid, BorderLayout.CENTER);
 		container.add(top, BorderLayout.NORTH);
+		container.add(bot, BorderLayout.SOUTH);
 		this.setContentPane(container);
 		this.setVisible(true); 
 		
