@@ -34,4 +34,11 @@ public class Joueur {
 		this.main = main;
 	}
 	
+	public int compterPoint()
+	{
+		point = 0;
+		
+		
+		return point;
+	}
 }

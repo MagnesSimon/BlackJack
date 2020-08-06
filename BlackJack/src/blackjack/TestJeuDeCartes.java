@@ -48,6 +48,9 @@ public class TestJeuDeCartes extends JFrame {
 		Joueur joueur2 = new Joueur(0, false);
 		Joueur joueur3 = new Joueur(0, false);
 		
+		// Création automatque de joueurs
+		sortie.append("Combien de joueurs? (2 - 5)\n");
+		
 		/**
 		 * pioche des deux première cartes
 		 */
@@ -97,8 +100,9 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new TestJeuDeCartes();
 		
+		//new TestJeuDeCartes();
+		new EcranAcceuil();
 		
 	}
 
