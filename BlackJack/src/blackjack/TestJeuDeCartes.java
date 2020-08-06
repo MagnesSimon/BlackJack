@@ -26,7 +26,9 @@ public class TestJeuDeCartes extends JFrame {
 	// Nombre de joueurs
 	private int nbJoueurs;
 	
-
+	
+	// Création de l'écran d'acceuil
+	EcranAcceuil acceuil = new EcranAcceuil();
 	/**
 	 * Construction de l'application
 	 */
@@ -35,9 +37,7 @@ public class TestJeuDeCartes extends JFrame {
 		// Appel du constructeur de la classe JFrame.
 		super("JeuDeCartes");
 		
-		// Création de l'écran d'acceuil
-		EcranAcceuil acceuil = new EcranAcceuil();
-		
+
 		
 		
 		// Ajout des composants au container

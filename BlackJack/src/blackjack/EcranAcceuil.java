@@ -39,6 +39,7 @@ public class EcranAcceuil extends JFrame {
 	JButton boutonStart = new JButton("Start Game !");
 	
 	
+	
 	private JPanel container = new JPanel();
 	private JLabel label = new JLabel(icone, JLabel.CENTER);
 	
@@ -47,7 +48,7 @@ public class EcranAcceuil extends JFrame {
 
 	public EcranAcceuil(){
 		this.setTitle("BlackJack");
-		this.setSize(1080, 1920);
+		this.setSize(1024,758);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		container.setBackground(Color.white);
@@ -67,6 +68,7 @@ public class EcranAcceuil extends JFrame {
 		// JPannel pour le bouton Start
 		JPanel bot = new JPanel();
 		bot.add(boutonStart);
+		
 		
 		container.add(mid, BorderLayout.CENTER);
 		container.add(top, BorderLayout.NORTH);
