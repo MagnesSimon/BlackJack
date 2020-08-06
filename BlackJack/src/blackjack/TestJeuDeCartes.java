@@ -60,6 +60,7 @@ public class TestJeuDeCartes extends JFrame {
 		Joueur joueur1 = new Joueur(0, false);
 		Joueur joueur2 = new Joueur(0, false);
 		Joueur joueur3 = new Joueur(0, false);
+		
 		*/
 		
 		// Création automatique de joueurs
