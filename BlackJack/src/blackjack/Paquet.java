@@ -98,7 +98,7 @@ public class Paquet {
 	{
 		if (n <= this.cartes.length)
 		{
-			Carte[] main = Arrays.copyOfRange(this.cartes, 0, n-1);
+			Carte[] main = Arrays.copyOfRange(this.cartes, 0, n);
 			this.cartes = Arrays.copyOfRange(this.cartes, n, this.cartes.length -1);
 			
 			return main;

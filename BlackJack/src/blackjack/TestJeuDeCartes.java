@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+
+
 public class TestJeuDeCartes extends JFrame {
 
 	/**
@@ -21,6 +23,12 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	private static final long serialVersionUID =1L;
 	
+	// Nombre de joueurs
+	private int nbJoueurs;
+	
+	
+	// Création de l'écran d'acceuil
+	EcranAcceuil acceuil = new EcranAcceuil();
 	/**
 	 * Construction de l'application
 	 */
@@ -28,6 +36,9 @@ public class TestJeuDeCartes extends JFrame {
 	{
 		// Appel du constructeur de la classe JFrame.
 		super("JeuDeCartes");
+		
+
+		
 		
 		// Ajout des composants au container
 		JTextArea zoneSortie = new JTextArea();
@@ -37,48 +48,60 @@ public class TestJeuDeCartes extends JFrame {
 		//Texte de sortie
 		StringBuilder sortie = new StringBuilder();
 		
+
+		
 		// Construction du paquet de cartes
 		Paquet paquet = new Paquet();
 		
-		// Affiche le jeu de cartes complet
-		sortie.append("Liste des cartes mélangées. \n\n");
-		String listeMelange = paquet.voirPaquet();
-		sortie.append(listeMelange);
+		// Création du croupier
+		Croupier croupier = new Croupier(0, false);
+		/*
+		// Création des joueurs
+		Joueur joueur1 = new Joueur(0, false);
+		Joueur joueur2 = new Joueur(0, false);
+		Joueur joueur3 = new Joueur(0, false);
+		*/
 		
-		// Pioche 5 cartes
-		sortie.append("Pioche 5 cartes : \n");
-		Carte[] main = paquet.piocher(5);
-		if (main != null)
+		// Création automatique de joueurs
+		sortie.append("Combien de joueurs? (2 - 5)\n");
+		for (int i = 0; i < getNbJoueurs(); i++ )
 		{
-			for (int i = 0; i < main.length; i++)
-			{
-				sortie.append("- ").append(main[i]).append("\n");
-			}
+			Joueur joueur = new Joueur(i, 0,false);
 		}
-		else
+		sortie.append("Il y a " + getNbJoueurs() + " joueurs! \n");
+		/**
+		 * pioche des deux première cartes
+		 */
+		/*
+		sortie.append("Le joueur 1 pioche 2 cartes. \n");
+		joueur1.main = paquet.piocher(2);
+		for (int i = 0; i< joueur1.main.length ; i++)
 		{
-			sortie.append("Le nombre de cartes dans le paquet est insuffisant! \n");
-		}
-		
-		// Essai de piocher 50 cartes
-		sortie.append("Pioche 50 cartes : \n");
-		Carte[] main1 = paquet.piocher(50);
-		if (main1 != null)
-		{
-			for (int i = 0; i < main1.length; i++)
-			{
-				sortie.append("- ").append(main1[i]).append("\n");
-			}
-		}
-		else
-		{
-			sortie.append("Le nombre de cartes dans le paquet est insuffisant! \n");
+			sortie.append("- ").append(joueur1.main[i]).append("\n");
 		}
 		
-		// Nombre de cartes
-		int nbCartes = paquet.getNombreCartes();
-		sortie.append("Nombre de cartes restante dans le paquets : ");
-		sortie.append(nbCartes);
+		sortie.append("Le joueur 2 pioche 2 cartes.\n");
+		joueur2.main = paquet.piocher(2);
+		for (int i = 0; i< joueur2.main.length ; i++)
+		{
+			sortie.append("- ").append(joueur2.main[i]).append("\n");
+		}
+		
+		sortie.append("Le joueur 3 pioche 2 cartes.\n");
+		joueur3.main = paquet.piocher(2);
+		for (int i = 0; i< joueur3.main.length ; i++)
+		{
+			sortie.append("- ").append(joueur3.main[i]).append("\n");
+		}
+		
+		sortie.append("Le croupier pioche 2 cartes. \n");
+		croupier.main = paquet.piocher(2);
+		for (int i = 0; i< croupier.main.length ; i++)
+		{
+			sortie.append("- ").append(croupier.main[i]).append("\n");
+		}
+		*/
+		
 		
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
@@ -89,14 +112,44 @@ public class TestJeuDeCartes extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
 	
+	public void choisirNbJoueurs()
+	{
+		setNbJoueurs(acceuil.getNbJoueurs());
+		
+	}
+	
+	/**
+	 * @return the nbJoueurs
+	 */
+	public int getNbJoueurs() {
+		return nbJoueurs;
+	}
+
+	/**
+	 * @param nbJoueurs the nbJoueurs to set
+	 */
+	public void setNbJoueurs(int nbJoueurs) {
+		this.nbJoueurs = nbJoueurs;
+	}
+	
+	// Methode de début de partie
+	public  void startGame()
+	{
+		new TestJeuDeCartes();
+		System.out.println("hi");
+	}
 	/**
 	 * Début de l'exécution du test
 	 * @param args Les paramètre de la ligne de commande
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new TestJeuDeCartes();
+		
+		//new TestJeuDeCartes();
+		EcranAcceuil ecran = new EcranAcceuil();
+		
 	}
 
 }
