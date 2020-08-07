@@ -56,7 +56,7 @@ public class Joueur {
 			
 		}
 	}
-	
+
 	
 	/**
 	 * @return the iD
