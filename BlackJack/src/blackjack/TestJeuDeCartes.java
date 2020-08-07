@@ -173,7 +173,9 @@ public class TestJeuDeCartes extends JFrame {
 		return (Joueur) listeJoueurs.get(0);
 	}
 	/**
-	 * 
+	 * Donne l'ID du joueur voulu
+	 * @param i Position du joueur dans la linkedList
+	 * @return L'id du joueur.
 	 */
 	public int getIdJoueurs(int i){
 		Joueur j ;
