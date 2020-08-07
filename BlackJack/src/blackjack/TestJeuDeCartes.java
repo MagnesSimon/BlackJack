@@ -9,6 +9,7 @@ package blackjack;
  */
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -26,11 +27,15 @@ public class TestJeuDeCartes extends JFrame {
 	// Nombre de joueurs
 	private int nbJoueurs;
 	
+	// Array des joueurs
+	//private ArrayList listeJoueurs;
+	
 	// Sortie 
 	StringBuilder sortie = new StringBuilder();
 	JTextArea zoneSortie = new JTextArea();
 	
-
+	// Creation du paquet
+	Paquet paquet = new Paquet();
 	/**
 	 * Construction de l'application
 	 */
@@ -48,7 +53,7 @@ public class TestJeuDeCartes extends JFrame {
 		getContentPane().add(new JScrollPane(zoneSortie), BorderLayout.CENTER);
 				
 		// Construction du paquet de cartes
-		Paquet paquet = new Paquet();
+		
 		
 		// Création du croupier
 		Croupier croupier = new Croupier(0, false);
@@ -102,16 +107,28 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	public void choisirNbJoueurs(int nb)
 	{
-		setNbJoueurs(nb);
-		System.out.println(getNbJoueurs() + " getNb");
-		
+		setNbJoueurs(nb);	
+		sortie.append("Il y a " + nb + " joueurs! \n");
 		for (int i = 0; i < nb; i++ )
 		{
 			Joueur joueur = new Joueur(i, 0,false);
+			joueur.setID(i);
+			
+			System.out.println(joueur.getID());
+			sortie.append("ID: " + joueur.getID() + "\n");
+			
+			joueur.setMain(paquet.piocher(2));
+			sortie.append("Joueur: " + joueur.getIDAdd()  + " voici vos cartes \n");
+			for (int j = 0; j< joueur.getMain().length ; j++)
+			{
+				sortie.append("- ").append( joueur.getMain()[j]).append("\n");
+			}
 		}
-		sortie.append("Il y a " + nb + " joueurs! \n");
+		
 		zoneSortie.setText(sortie.toString());
 	}
+	
+
 	
 	/**
 	 * @return the nbJoueurs
