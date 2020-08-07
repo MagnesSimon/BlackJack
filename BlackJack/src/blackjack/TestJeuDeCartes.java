@@ -26,9 +26,11 @@ public class TestJeuDeCartes extends JFrame {
 	// Nombre de joueurs
 	private int nbJoueurs;
 	
+	// Sortie 
+	StringBuilder sortie = new StringBuilder();
+	JTextArea zoneSortie = new JTextArea();
 	
-	// Création de l'écran d'acceuil
-	EcranAcceuil acceuil = new EcranAcceuil();
+
 	/**
 	 * Construction de l'application
 	 */
@@ -37,39 +39,20 @@ public class TestJeuDeCartes extends JFrame {
 		// Appel du constructeur de la classe JFrame.
 		super("JeuDeCartes");
 		
+		// Choisir le nombre de joueur
 
-		
 		
 		// Ajout des composants au container
-		JTextArea zoneSortie = new JTextArea();
+		
 		zoneSortie.setEditable(false);
 		getContentPane().add(new JScrollPane(zoneSortie), BorderLayout.CENTER);
-		
-		//Texte de sortie
-		StringBuilder sortie = new StringBuilder();
-		
-
-		
+				
 		// Construction du paquet de cartes
 		Paquet paquet = new Paquet();
 		
 		// Création du croupier
 		Croupier croupier = new Croupier(0, false);
-		/*
-		// Création des joueurs
-		Joueur joueur1 = new Joueur(0, false);
-		Joueur joueur2 = new Joueur(0, false);
-		Joueur joueur3 = new Joueur(0, false);
 		
-		*/
-		
-		// Création automatique de joueurs
-		sortie.append("Combien de joueurs? (2 - 5)\n");
-		for (int i = 0; i < getNbJoueurs(); i++ )
-		{
-			Joueur joueur = new Joueur(i, 0,false);
-		}
-		sortie.append("Il y a " + getNbJoueurs() + " joueurs! \n");
 		/**
 		 * pioche des deux première cartes
 		 */
@@ -114,11 +97,20 @@ public class TestJeuDeCartes extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	
-	public void choisirNbJoueurs()
+	/**
+	 * Création automatique de joueurs
+	 */
+	public void choisirNbJoueurs(int nb)
 	{
-		setNbJoueurs(acceuil.getNbJoueurs());
+		setNbJoueurs(nb);
+		System.out.println(getNbJoueurs() + " getNb");
 		
+		for (int i = 0; i < nb; i++ )
+		{
+			Joueur joueur = new Joueur(i, 0,false);
+		}
+		sortie.append("Il y a " + nb + " joueurs! \n");
+		zoneSortie.setText(sortie.toString());
 	}
 	
 	/**
@@ -140,6 +132,7 @@ public class TestJeuDeCartes extends JFrame {
 	{
 		new TestJeuDeCartes();
 		System.out.println("hi");
+		
 	}
 	/**
 	 * Début de l'exécution du test
