@@ -109,8 +109,9 @@ public class TestJeuDeCartes extends JFrame {
 		nb = ecran.getNbJoueurs();
 		for (int i = 0; i < ecran.getNbJoueurs(); i++)
 		{
-			Joueur joueur = new  Joueur(i, 0,false);
-			joueur.setID(i);
+			Joueur joueur = new  Joueur(0, 0,false);
+			int j = i+1;
+			joueur.setID(j);
 			listeJoueurs.add(joueur);
 		}
 	}
@@ -119,12 +120,12 @@ public class TestJeuDeCartes extends JFrame {
 	 * Afficher les cartes du joueurs
 	 * @param id L'id du joueurs dont on veux afficher les cartes.
 	 */
-	public void afficher(int id, Joueur joueur)
+	public void afficher(int pos, Joueur joueur)
 	{
-		sortie.append("\n Le joueur " + id + " possede les cartes suivantes: \n");
-		for (int j = 0; j< getJoueurs(id).getMain().length ; j++)
+		sortie.append("\n Le joueur " + getIdJoueurs(pos) + " possede les cartes suivantes: \n");
+		for (int j = 0; j< getJoueurs(pos).getMain().length ; j++)
 		{
-		sortie.append("- ").append( getJoueurs(id).getMain()[j]).append("\n");
+		sortie.append("- ").append( getJoueurs(pos).getMain()[j]).append("\n");
 		}
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
