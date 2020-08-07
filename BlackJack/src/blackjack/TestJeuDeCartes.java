@@ -44,60 +44,19 @@ public class TestJeuDeCartes extends JFrame {
 		// Appel du constructeur de la classe JFrame.
 		super("JeuDeCartes");
 		
-		// Choisir le nombre de joueur
-
-		
 		// Ajout des composants au container
-		
 		zoneSortie.setEditable(false);
 		getContentPane().add(new JScrollPane(zoneSortie), BorderLayout.CENTER);
 				
-		// Construction du paquet de cartes
-		
-		
 		// Création du croupier
 		Croupier croupier = new Croupier(0, false);
-		
-		/**
-		 * pioche des deux première cartes
-		 */
-		/*
-		sortie.append("Le joueur 1 pioche 2 cartes. \n");
-		joueur1.main = paquet.piocher(2);
-		for (int i = 0; i< joueur1.main.length ; i++)
-		{
-			sortie.append("- ").append(joueur1.main[i]).append("\n");
-		}
-		
-		sortie.append("Le joueur 2 pioche 2 cartes.\n");
-		joueur2.main = paquet.piocher(2);
-		for (int i = 0; i< joueur2.main.length ; i++)
-		{
-			sortie.append("- ").append(joueur2.main[i]).append("\n");
-		}
-		
-		sortie.append("Le joueur 3 pioche 2 cartes.\n");
-		joueur3.main = paquet.piocher(2);
-		for (int i = 0; i< joueur3.main.length ; i++)
-		{
-			sortie.append("- ").append(joueur3.main[i]).append("\n");
-		}
-		
-		sortie.append("Le croupier pioche 2 cartes. \n");
-		croupier.main = paquet.piocher(2);
-		for (int i = 0; i< croupier.main.length ; i++)
-		{
-			sortie.append("- ").append(croupier.main[i]).append("\n");
-		}
-		*/
-		
-		
+			
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
 		
 		// Modifie les propriété de la fenêtre
-		setSize(600,200);
-		setLocation(100,200);
+		setSize(1920,1080);
+		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -114,11 +73,8 @@ public class TestJeuDeCartes extends JFrame {
 			Joueur joueur = new Joueur(i, 0,false);
 			joueur.setID(i);
 			
-			System.out.println(joueur.getID());
-			sortie.append("ID: " + joueur.getID() + "\n");
-			
 			joueur.setMain(paquet.piocher(2));
-			sortie.append("Joueur: " + joueur.getIDAdd()  + " voici vos cartes \n");
+			sortie.append("\n Joueur: " + joueur.getIDAdd()  + " voici vos cartes \n");
 			for (int j = 0; j< joueur.getMain().length ; j++)
 			{
 				sortie.append("- ").append( joueur.getMain()[j]).append("\n");
@@ -144,13 +100,6 @@ public class TestJeuDeCartes extends JFrame {
 		this.nbJoueurs = nbJoueurs;
 	}
 	
-	// Methode de début de partie
-	public  void startGame()
-	{
-		new TestJeuDeCartes();
-		System.out.println("hi");
-		
-	}
 	/**
 	 * Début de l'exécution du test
 	 * @param args Les paramètre de la ligne de commande
