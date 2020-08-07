@@ -86,7 +86,7 @@ public class EcranAcceuil extends JFrame {
 				// TODO Auto-generated method stub
 				setNbJoueurs(2);
 				
-				System.out.println("2 joueurs");
+				//System.out.println("2 joueurs");
 			}
 		});
 		bouton3.addActionListener(new ActionListener()
@@ -95,7 +95,7 @@ public class EcranAcceuil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				setNbJoueurs(3);
-				System.out.println("3 joueurs");
+				//System.out.println("3 joueurs");
 			}
 		});
 		bouton4.addActionListener(new ActionListener()
@@ -104,7 +104,7 @@ public class EcranAcceuil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				setNbJoueurs(4);
-				System.out.println("4 joueurs");
+				//System.out.println("4 joueurs");
 			}
 		});
 		bouton5.addActionListener(new ActionListener()
@@ -113,7 +113,7 @@ public class EcranAcceuil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				setNbJoueurs(5);
-				System.out.println("5 joueurs");
+				//System.out.println("5 joueurs");
 			}
 		});
 		
@@ -122,14 +122,26 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println(getNbJoueurs() + " - nbjoueurs");
+				//System.out.println(getNbJoueurs() + " - nbjoueurs");
 				TestJeuDeCartes jeu = new TestJeuDeCartes();
-				jeu.setNbJoueurs(getNbJoueurs());
+				fermerFenetre();
+				
+				jeu.choisirNbJoueurs(getNbJoueurs());
+				
 				System.out.println(jeu.getNbJoueurs() + " get");
+				
+				
+				
 			}
 		});
 	}
-	
+	/**
+	 * Fermer la fenêtre
+	 */
+	public void fermerFenetre()
+	{
+		this.dispose();
+	}
 
 	/**
 	 * @return the nbJoueurs

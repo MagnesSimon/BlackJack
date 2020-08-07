@@ -9,5 +9,5 @@ package blackjack;
  */
 public class Jeu {
 
-
+	// Cette classe sera surement supprimée
 }
