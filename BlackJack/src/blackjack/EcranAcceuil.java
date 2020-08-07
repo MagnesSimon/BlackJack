@@ -84,7 +84,7 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setNbJoueurs(2);
+				setNbJoueurs(3);
 			}
 		});
 		bouton3.addActionListener(new ActionListener()
@@ -92,7 +92,7 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setNbJoueurs(3);
+				setNbJoueurs(4);
 			}
 		});
 		bouton4.addActionListener(new ActionListener()
@@ -100,7 +100,7 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setNbJoueurs(4);
+				setNbJoueurs(5);
 			}
 		});
 		bouton5.addActionListener(new ActionListener()
@@ -108,24 +108,10 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setNbJoueurs(5);
+				setNbJoueurs(6);
 			}
 		});
-		
-		boutonStart.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				TestJeuDeCartes jeu = new TestJeuDeCartes();
-				fermerFenetre();
-				
-				jeu.choisirNbJoueurs(getNbJoueurs());
-				
-				
-				
-			}
-		});
+
 	}
 	/**
 	 * Fermer la fenêtre
