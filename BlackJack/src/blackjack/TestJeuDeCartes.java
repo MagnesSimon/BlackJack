@@ -41,8 +41,7 @@ public class TestJeuDeCartes extends JFrame {
 	// Création de la liste de joueurs
 	LinkedList listeJoueurs = new LinkedList();
 	
-	// Création du croupier
-	Croupier croupier = new Croupier(0, false);
+
 	
 	
 	/**
@@ -101,11 +100,15 @@ public class TestJeuDeCartes extends JFrame {
 */
 	}
 	/**
-	 * Creer le nombre de joueurs voulu
+	 * Creer le nombre de joueurs voulu ansi que le croupier
 	 * @param nb Le nombre de joueurs
 	 * @param ecran L'ecran d'acceuil sur lequel on clique pour savoir le nombre de joueurs
 	 */
 	public void creerJoueurs(int nb, EcranAcceuil ecran) {
+		// Création du croupier
+		Croupier croupier = new Croupier(0, false);
+		listeJoueurs.add(croupier);
+		
 		nb = ecran.getNbJoueurs();
 		for (int i = 0; i < ecran.getNbJoueurs(); i++)
 		{
@@ -122,10 +125,21 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	public void afficher(int pos, Joueur joueur)
 	{
-		sortie.append("\n Le joueur " + getIdJoueurs(pos) + " possede les cartes suivantes: \n");
-		for (int j = 0; j< getJoueurs(pos).getMain().length ; j++)
+		if ( pos == 0)
 		{
-		sortie.append("- ").append( getJoueurs(pos).getMain()[j]).append("\n");
+			sortie.append("\n Le Croupier possède les cartes suivantes: \n");
+			for (int j = 0; j< getCroupier().getMain().length ; j++)
+			{
+			sortie.append("- ").append( getCroupier().getMain()[j]).append("\n");
+			}
+		}
+		else
+		{
+			sortie.append("\n Le joueur " + getIdJoueurs(pos) + " possede les cartes suivantes: \n");
+			for (int j = 0; j< getJoueurs(pos).getMain().length ; j++)
+			{
+				sortie.append("- ").append( getJoueurs(pos).getMain()[j]).append("\n");
+			}
 		}
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
@@ -151,6 +165,12 @@ public class TestJeuDeCartes extends JFrame {
 	 */
 	public Joueur getJoueurs(int i) {
 		return (Joueur) listeJoueurs.get(i);
+	}
+	/**
+	 * @return le croupier
+	 */
+	public Joueur getCroupier() {
+		return (Joueur) listeJoueurs.get(0);
 	}
 	/**
 	 * 
@@ -196,6 +216,8 @@ public class TestJeuDeCartes extends JFrame {
 				ecran.fermerFenetre();
 				jeu.creerJoueurs(ecran.getNbJoueurs(), ecran);
 				jeu.startGame(ecran.getNbJoueurs());
+				
+				jeu.getCroupier().setMain(paquet.piocher(2));
 				
 				for (int i = 0; i < ecran.getNbJoueurs(); i++)
 				{
