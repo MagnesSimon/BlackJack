@@ -122,10 +122,10 @@ public class TestJeuDeCartes extends JFrame {
 	public void afficher(int id, Joueur joueur)
 	{
 		sortie.append("\n Le joueur " + id + " possede les cartes suivantes: \n");
-	//	for (int j = 0; j< getJoueurs(id).getMain().length ; j++)
-	//	{
-	//	sortie.append("- ").append( getJoueurs(id).getMain()[j]).append("\n");
-	//	}
+		for (int j = 0; j< getJoueurs(id).getMain().length ; j++)
+		{
+		sortie.append("- ").append( getJoueurs(id).getMain()[j]).append("\n");
+		}
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
 	}
@@ -195,8 +195,17 @@ public class TestJeuDeCartes extends JFrame {
 				ecran.fermerFenetre();
 				jeu.creerJoueurs(ecran.getNbJoueurs(), ecran);
 				jeu.startGame(ecran.getNbJoueurs());
-				jeu.afficher(1, jeu.getJoueurs(1));
 				
+				for (int i = 0; i < ecran.getNbJoueurs(); i++)
+				{
+					jeu.getJoueurs(i).setMain(paquet.piocher(2));
+				}
+				
+				//jeu.afficher(1, jeu.getJoueurs(1));
+				for (int i =0 ; i < ecran.getNbJoueurs(); i++)
+				{
+					jeu.afficher(i, jeu.getJoueurs(i));
+				}
 
 			}
 		});
