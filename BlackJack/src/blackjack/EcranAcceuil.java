@@ -111,21 +111,7 @@ public class EcranAcceuil extends JFrame {
 				setNbJoueurs(5);
 			}
 		});
-		
-		boutonStart.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				TestJeuDeCartes jeu = new TestJeuDeCartes();
-				fermerFenetre();
-				
-				jeu.choisirNbJoueurs(getNbJoueurs());
-				
-				
-				
-			}
-		});
+
 	}
 	/**
 	 * Fermer la fenêtre
