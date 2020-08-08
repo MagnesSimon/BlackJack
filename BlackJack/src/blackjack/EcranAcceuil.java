@@ -48,7 +48,7 @@ public class EcranAcceuil extends JFrame {
 
 	public EcranAcceuil(){
 		this.setTitle("BlackJack");
-		this.setSize(1920,1080);
+		this.setSize(1919,1080);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		container.setBackground(Color.white);
