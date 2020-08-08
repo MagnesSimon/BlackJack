@@ -144,7 +144,198 @@ public class TestJeuDeCartes extends JFrame {
 		// Met à jour la zone de sortie
 		zoneSortie.setText(sortie.toString());
 	}
-	
+	public void compterScore(int id)
+	{
+		int score = 0;
+		for (int i =0; i < getJoueurs(id).getMain().length; i++)
+		{
+			switch ( getJoueurs(id).getMain()[i].toString()) {
+			
+			// LES AS
+			case "AS de COEUR":
+				score += 11;
+				break;	
+			case "AS de CARREAU":
+				score += 11;
+				break;
+			case "AS de PIQUE":
+				score += 11;
+				break;
+			case "AS de TREFLE":
+				score += 11;
+				break;
+			
+				// LES DEUX
+			case "DEUX de COEUR":
+				score += 2;
+				break;
+			case "DEUX de CARREAU":
+				score += 2;
+				break;
+			case "DEUX de PIQUE":
+				score += 2;
+				break;
+			case "DEUX de TREFLE":
+				score += 2;
+				break;
+				
+			// LES TROIS
+			case "TROIS de COEUR":
+				score += 3;
+				break;	
+			case "TROIS de CARREAU":
+				score += 3;
+				break;
+			case "TROIS de PIQUE":
+				score += 3;
+				break;
+			case "TROIS de TREFLE":
+				score += 3;
+				break;
+			
+			// LES QUATRES
+			case "QUATRE de COEUR":
+				score += 4;
+				break;
+			case "QUATRE de CARREAU":
+				score += 4;
+				break;
+			case "QUATRE de PIQUE":
+				score += 4;
+				break;
+			case "QUATRE de TREFLE":
+				score += 4;
+				break;
+			// LES CINQ
+			case "CINQ de COEUR":
+				score += 5;
+				break;	
+			case "CINQ de CARREAU":
+				score += 5;
+				break;
+			case "CINQ de PIQUE":
+				score += 5;
+				break;
+			case "CINQ de TREFLE":
+				score += 5;
+				break;
+				
+			// LES SIX
+			case "SIX de COEUR":
+				score += 6;
+				break;
+			case "SIX de CARREAU":
+				score += 6;
+				break;
+			case "SIX de PIQUE":
+				score += 6;
+				break;
+			case "SIX de TREFLE":
+				score += 6;
+				break;
+					
+			// LES SEPT
+			case "SEPT de COEUR":
+				score += 7;
+				break;	
+			case "SEPT de CARREAU":
+				score += 7;
+				break;
+			case "SEPT de PIQUE":
+				score += 7;
+				break;
+			case "SEPT de TREFLE":
+				score += 7;
+				break;
+			
+			// LES HUIT
+			case "HUIT de COEUR":
+				score += 8;
+				break;
+			case "HUIT de CARREAU":
+				score += 8;
+				break;
+			case "HUIT de PIQUE":
+				score += 8;
+				break;
+			case "HUIT de TREFLE":
+				score += 8;
+				break;
+				
+			// LES NEUF
+			case "NEUF de COEUR":
+				score += 9;
+				break;	
+			case "NEUF de CARREAU":
+				score += 9;
+				break;
+			case "NEUF de PIQUE":
+				score += 9;
+				break;
+			case "NEUF de TREFLE":
+				score += 9;
+				break;
+				
+			// LES DIX
+			case "DIX de COEUR":
+				score += 10;
+				break;
+			case "DIX de CARREAU":
+				score += 10;
+				break;
+			case "DIX de PIQUE":
+				score += 10;
+				break;
+			case "DIX de TREFLE":
+				score += 10;
+				break;
+				
+			// LES VALETS
+			case "VALET de COEUR":
+				score += 10;
+				break;	
+			case "VALET de CARREAU":
+				score += 10;
+				break;
+			case "VALET de PIQUE":
+				score += 10;
+				break;
+			case "VALET de TREFLE":
+				score += 10;
+				break;
+			
+			// LES DAMES
+			case "DAME de COEUR":
+				score += 10;
+				break;
+			case "DAME de CARREAU":
+				score += 10;
+				break;
+			case "DAME de PIQUE":
+				score += 10;
+				break;
+			case "DAME de TREFLE":
+				score += 10;
+				break;
+				
+			// LES ROI
+			case "ROI de COEUR":
+				score += 10;
+				break;	
+			case "ROI de CARREAU":
+				score += 10;
+				break;
+			case "ROI de PIQUE":
+				score += 10;
+				break;
+			case "ROI de TREFLE":
+				score += 10;
+				break;
+			}
+		}
+		sortie.append("Score : "+ score + "\n");
+		zoneSortie.setText(sortie.toString());
+	}
 	/**
 	 * @return the nbJoueurs
 	 */
@@ -219,36 +410,28 @@ public class TestJeuDeCartes extends JFrame {
 				jeu.creerJoueurs(ecran.getNbJoueurs(), ecran);
 				jeu.startGame(ecran.getNbJoueurs());
 				
+				// Le croupier pioche
 				jeu.getCroupier().setMain(paquet.piocher(2));
 				
+				// Les joueurs pioche
 				for (int i = 0; i < ecran.getNbJoueurs(); i++)
 				{
 					jeu.getJoueurs(i).setMain(paquet.piocher(2));
 				}
 				
-				//jeu.afficher(1, jeu.getJoueurs(1));
+				// Affiche les cartes des joueurs
 				for (int i =0 ; i < ecran.getNbJoueurs(); i++)
 				{
 					jeu.afficher(i, jeu.getJoueurs(i));
+					jeu.compterScore(i);
 				}
-
+				
+				
+				
 			}
 		});
-		
-
-	/*	
-		for (int i = 0; i < ecran.getNbJoueurs(); i++)
-		{
-			Joueur joueur = new Joueur(i, 0,false);
-			joueur.setID(i);
-			joueur.setMain(paquet.piocher(2));
-			jeu.afficher(i, joueur);
-		}
-	*/	
-		
-		
-		// Fin du main
 	}
-
 }
+	
+
 
