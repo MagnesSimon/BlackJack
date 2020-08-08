@@ -72,8 +72,6 @@ public class TestJeuDeCartes extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
-		
 
 		/*
 		setNbJoueurs(nb);	
