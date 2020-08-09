@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Iterator;
 
 public class BlackJack {
 	
@@ -34,6 +35,108 @@ public class BlackJack {
 	public Carte piocher(Joueur j)
 	{
 		Carte result = j.prendreCarte(paquet);
+		
+		return result;
+	}
+	
+	/**
+	 * permet d'obtenir la valeur des cartes en main
+	 * @param j le joueur
+	 * @return la valeur des cartes en main
+	 */
+	public int valeurMain(Joueur j) {
+		int result = j.getValeurMain();
+		
+		return result;
+	}
+	 /**
+	  * Retire une carte de la main du joueur
+	  * @param j le joueur a qui on retire la carte
+	  * @param c la carte retirée
+	  */
+	public void retirer (Joueur j, Carte c)
+	{
+		Carte carte = null;
+		boolean existe = false;
+		Iterator<Carte> scan = j.iterator();
+		
+		while(scan.hasNext() && !existe)
+		{
+			carte = scan.next();
+			
+			if(c.equals(carte))
+			{
+				j.remove(carte);
+				existe = true;
+			}
+		}
+	}
+	
+	/**
+	 * Permet de savoir si le joueur a fait un score de 21
+	 * @return le score de 21
+	 */
+	public boolean blackj()
+	{
+		boolean result = false;
+		
+		if(joueur.getValeurMain() == 21)
+		{
+			result = true;
+		}
+		return result;
+	}
+	
+	/**
+	 * Permet de savoir si le joueur a depasser 21
+	 * @param j le joueur
+	 * @return le score du joueur
+	 */
+	public boolean echec(Joueur j)
+	{
+		boolean result = false;
+		
+		if(j.getValeurMain() > 21)
+		{
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Le croupier joue tant qu'il n'a pas au moin un score de 18
+	 * @return le score du croupier
+	 */
+	public Joueur minCroupier() {
+		Joueur result = croupier;
+		
+		while(croupier.getValeurMain() < 17)
+		{
+			croupier.prendreCarte(paquet);
+		}
+		return result;
+	}
+	
+	/**
+	 * Permet de savoir qui gagne
+	 * @return Un string annonçant la victoire ou la défaite.
+	 */
+	public String fin()
+	{
+		String result = "";
+		if((joueur.getValeurMain() < croupier.getValeurMain()) && croupier.getValeurMain() <= 21)
+		{
+			result = "Perdu !";
+		}
+		else if((joueur.getValeurMain() == croupier.getValeurMain()) && croupier.getValeurMain() <= 21)
+		{
+			result = "Egalité !";
+		}
+		else
+		{
+			result = "Victoire !";
+		}
 		
 		return result;
 	}
