@@ -15,7 +15,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -41,8 +44,8 @@ public class TestJeuDeCartes extends JFrame {
 	// Création de la liste de joueurs
 	LinkedList listeJoueurs = new LinkedList();
 	
-
-	
+	// JPanel
+	JPanel zoneCarte = new JPanel();
 	
 	/**
 	 * Construction de l'application
@@ -53,9 +56,6 @@ public class TestJeuDeCartes extends JFrame {
 		super("JeuDeCartes");
 	}
 
-	/**
-	 * Création automatique de joueurs
-	 */
 	public void startGame(int nb)
 	{
 		
@@ -72,6 +72,14 @@ public class TestJeuDeCartes extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		String imgUrl="img/cartes/1-coeur.jpg";
+		ImageIcon icone = new ImageIcon(imgUrl);
+		
+		JLabel img = new JLabel(icone, JLabel.CENTER);
+		
+		JPanel mid = new JPanel();
+		mid.add(img);
+		zoneCarte.add(mid, BorderLayout.CENTER);
 		
 		
 
