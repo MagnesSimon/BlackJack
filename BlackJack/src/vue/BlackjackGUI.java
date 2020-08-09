@@ -4,6 +4,10 @@
 package vue;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -22,7 +26,7 @@ public class BlackjackGUI extends JPanel {
 	JTextPane winLoseBox = new JTextPane();
 	
 	JButton boutonPiocher = new JButton();
-	JButton boutonCommencer = new JButton();
+	JButton boutonDemarrer = new JButton();
 	JButton boutonPasser = new JButton();
 	JButton boutonRecommencer = new JButton();
 	
@@ -43,8 +47,23 @@ public class BlackjackGUI extends JPanel {
 	
 	public BlackjackGUI()
 	{
-		top.setBackground(new Color(0, 122, 0));
-		carteCroupier.setBackground(new Color(0, 122, 0));
-		carteJoueur.setBackground(new Color(0, 122, 0));
+		top.setBackground(Color.GREEN);
+		carteCroupier.setBackground(Color.GREEN);
+		carteJoueur.setBackground(Color.GREEN);
+		
+		top.setLayout(new FlowLayout());
+		winLoseBox.setText(" ");
+		winLoseBox.setFont(new Font("Helvetica Bold", 1, 20));
+		
+		boutonDemarrer.setText(" Commencer ");
+		boutonDemarrer.addActionListener(new ActionListener()
+				{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				carteCroupier.add(labelCroupier);
+			}
+		});
 	}
+
 }
