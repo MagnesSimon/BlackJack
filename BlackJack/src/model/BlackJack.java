@@ -25,4 +25,16 @@ public class BlackJack {
 		joueur.prendreCarte(paquet);
 		joueur.prendreCarte(paquet);
 	}
+	
+	/**
+	 * Methode pour piocher une carte
+	 * @param j le joueur qui pioche
+	 * @return la carte piocher
+	 */
+	public Carte piocher(Joueur j)
+	{
+		Carte result = j.prendreCarte(paquet);
+		
+		return result;
+	}
 }
