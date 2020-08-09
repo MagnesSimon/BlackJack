@@ -7,7 +7,7 @@ public class Joueur{
 	
 	protected ArrayList<Carte> main;
 	protected int valeurMain;
-	protected int point;
+	protected int compte;
 	
 	/*
 	 * Constructeur
@@ -15,7 +15,7 @@ public class Joueur{
 	public Joueur() {
 		main = new ArrayList<Carte>(12);
 		valeurMain = 0;
-		point = 0;
+		compte = 0;
 	}
 	
 	/**
@@ -57,7 +57,80 @@ public class Joueur{
 			}
 		}
 		return result;
-		
-		
 	}
+	
+	public Carte prendreCarte(Paquet paquet)
+	{
+		Carte result;
+		result = paquet.piocher();
+		main.add(result);
+		valeurMain += result.getValeur();
+		reduireMain(result);
+		compte ++;
+		
+		return result;
+	}
+	
+	public Iterator<Carte> iterator(){
+		return main.iterator();
+	}
+	
+	/**
+	 * enleve la carte voulue
+	 * @param carte qu on veut retirer
+	 * @return la carte retirée
+	 */
+	public boolean remove(Carte carte) {
+		return (main.remove(carte));
+	}
+
+	/**
+	 * @return the main
+	 */
+	public ArrayList<Carte> getMain() {
+		return main;
+	}
+
+	/**
+	 * @param main the main to set
+	 */
+	public void setMain(ArrayList<Carte> main) {
+		this.main = main;
+	}
+
+	/**
+	 * @return the valeurMain
+	 */
+	public int getValeurMain() {
+		return valeurMain;
+	}
+
+	/**
+	 * @param valeurMain the valeurMain to set
+	 */
+	public void setValeurMain(int valeurMain) {
+		this.valeurMain = valeurMain;
+	}
+
+	/**
+	 * @return the compte
+	 */
+	public int getCompte() {
+		return compte;
+	}
+
+	/**
+	 * @param compte the compte to set
+	 */
+	public void setCompte(int compte) {
+		this.compte = compte;
+	}
+
+	@Override
+	public String toString() {
+		return "Joueur [" + (main != null ? "main=" + main + ", " : "") + "valeurMain=" + valeurMain + ", compte="
+				+ compte + "]";
+	}
+	
+	
 }
