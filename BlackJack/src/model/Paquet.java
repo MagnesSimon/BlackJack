@@ -192,7 +192,7 @@ public class Paquet
 	 * Methode pour piocher
 	 * @return result La carte piochée
 	 */
-	public Carte piocher() {
+	public Carte prendre() {
 		int rando = (int) ((Math.random()*getPaquetSize()));
 		Carte result = new Carte();
 		result = (paquetCartes).remove(rando);

@@ -62,7 +62,7 @@ public class Joueur{
 	public Carte prendreCarte(Paquet paquet)
 	{
 		Carte result;
-		result = paquet.piocher();
+		result = paquet.prendre();
 		main.add(result);
 		valeurMain += result.getValeur();
 		reduireMain(result);
