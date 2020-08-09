@@ -37,5 +37,57 @@ public class Carte {
 		valeur = v;
 		imgCarte = i;
 	}
+	/**
+	 * @return the couleur
+	 */
+	public String getCouleur() {
+		return couleur;
+	}
+	/**
+	 * @param couleur the couleur to set
+	 */
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+	/**
+	 * @return the numero
+	 */
+	public String getNumero() {
+		return numero;
+	}
+	/**
+	 * @param numero the numero to set
+	 */
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	/**
+	 * @return the valeur
+	 */
+	public int getValeur() {
+		return valeur;
+	}
+	/**
+	 * @param valeur the valeur to set
+	 */
+	public void setValeur(int valeur) {
+		this.valeur = valeur;
+	}
+	/**
+	 * @return the imgCarte
+	 */
+	public ImageIcon getImgCarte() {
+		return imgCarte;
+	}
+	/**
+	 * @param imgCarte the imgCarte to set
+	 */
+	public void setImgCarte(ImageIcon imgCarte) {
+		this.imgCarte = imgCarte;
+	}
+	@Override
+	public String toString() {
+		return "Couleur : " + couleur + " numero: " + numero + " valeur: " + valeur;
+	}
 	
 }
