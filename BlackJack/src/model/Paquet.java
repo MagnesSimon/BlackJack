@@ -188,4 +188,38 @@ public class Paquet
 		paquetCartes.add(roipique);
 	}
 	
+	/**
+	 * Methode pour piocher
+	 * @return result La carte piochée
+	 */
+	public Carte piocher() {
+		int rando = (int) ((Math.random()*getPaquetSize()));
+		Carte result = new Carte();
+		result = (paquetCartes).remove(rando);
+		
+		return result;
+	}
+
+	/**
+	 * Methode pour obtenir la taille du paquet de cartes
+	 * @return la taille du paquet de cartes
+	 */
+	private double getPaquetSize() {
+		// TODO Auto-generated method stub
+		return paquetCartes.size();
+	}
+
+	/**
+	 * @return the paquetCartes
+	 */
+	public ArrayList<Carte> getPaquetCartes() {
+		return paquetCartes;
+	}
+
+	/**
+	 * @param paquetCartes the paquetCartes to set
+	 */
+	public void setPaquetCartes(ArrayList<Carte> paquetCartes) {
+		this.paquetCartes = paquetCartes;
+	}
 }
