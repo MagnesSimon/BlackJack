@@ -145,4 +145,48 @@ public class BlackJack {
 		
 		return result;
 	}
+
+	/**
+	 * @return the croupier
+	 */
+	public Joueur getCroupier() {
+		return croupier;
+	}
+
+	/**
+	 * @param croupier the croupier to set
+	 */
+	public void setCroupier(Joueur croupier) {
+		this.croupier = croupier;
+	}
+
+	/**
+	 * @return the joueur
+	 */
+	public Joueur getJoueur() {
+		return joueur;
+	}
+
+	/**
+	 * @param joueur the joueur to set
+	 */
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
+	}
+
+	/**
+	 * @return the paquet
+	 */
+	public Paquet getPaquet() {
+		return paquet;
+	}
+
+	/**
+	 * @param paquet the paquet to set
+	 */
+	public void setPaquet(Paquet paquet) {
+		this.paquet = paquet;
+	}
+	
+	
 }
