@@ -2,6 +2,9 @@ package model;
 
 import java.util.Iterator;
 
+import contrôleur.*;
+
+
 public class BlackJack {
 	
 	Joueur croupier;
@@ -54,7 +57,7 @@ public class BlackJack {
 	  * @param j le joueur a qui on retire la carte
 	  * @param c la carte retirée
 	  */
-	public void retirer (Joueur j, Carte c)
+	public void retirer (Joueur j, Carte c) throws ElementNotFoundException
 	{
 		Carte carte = null;
 		boolean existe = false;
@@ -70,6 +73,8 @@ public class BlackJack {
 				existe = true;
 			}
 		}
+		if(!existe)
+	        throw new ElementNotFoundException("BlackJack");
 	}
 	
 	/**

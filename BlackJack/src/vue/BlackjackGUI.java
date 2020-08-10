@@ -74,27 +74,22 @@ public class BlackjackGUI extends JPanel {
 				/**
 				 * 
 				 */
-				croupierCarte0 = new JLabel(new ImageIcon("img/carte/back.jpg"));
+				croupierCarte0 = new JLabel(new ImageIcon("img/cartes/dos.png"));
 				partie.initialisationPartie();
 				
 				Carte carteCroupier = null;
 				Iterator<Carte> cscan =(croupier.getMain()).iterator();
 				int compteC = 0;
-				System.out.println("Croupier: \n");
 				while (cscan.hasNext())
 				{
 					carteCroupier = cscan.next();
 					if (compteC == 0)
 					{
 						croupierCarte1 = new JLabel(carteCroupier.getImgCarte());
-						System.out.println("Carte 1: " + carteCroupier );
-
 					}
 					else
 					{
 						croupierCarte2 = new JLabel(carteCroupier.getImgCarte());
-						System.out.println("Carte 2: " + carteCroupier );
-
 					}
 					compteC ++;
 				}
@@ -102,26 +97,21 @@ public class BlackjackGUI extends JPanel {
 				Carte carteJoueur = null;
 				Iterator<Carte> jscan = joueur.getMain().iterator();
 				int compteJ = 0;
-				System.out.println("Joueur: \n");
 				while (jscan.hasNext())
 				{
 					carteJoueur = jscan.next();
 					if (compteJ == 0)
 					{
 						joueurCarte1 = new JLabel(carteJoueur.getImgCarte());
-						System.out.println("Carte 2: " + carteJoueur  );
 					}
 					else
 					{
 						joueurCarte2 = new JLabel(carteJoueur.getImgCarte());
-						System.out.println("Carte 2: " + carteJoueur );
-						System.out.println(carteJoueur.getImgCarte());
 					}
 					compteJ ++;
 				}
 				
 				carteCroupierPanel.add(croupierCarte0);
-				System.out.println(croupierCarte0);
 				carteCroupierPanel.add(croupierCarte2);
 				
 				carteJoueurPanel.add(joueurCarte1);
