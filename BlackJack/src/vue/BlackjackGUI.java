@@ -94,11 +94,12 @@ public class BlackjackGUI extends JPanel {
 					compteC ++;
 				}
 				
+				Carte carteJoueur = null;
 				Iterator<Carte> jscan = joueur.getMain().iterator();
 				int compteJ = 0;
 				while (jscan.hasNext())
 				{
-					Carte carteJoueur = cscan.next();
+					carteJoueur = jscan.next();
 					if (compteJ == 0)
 					{
 						joueurCarte1 = new JLabel(carteJoueur.getImgCarte());
