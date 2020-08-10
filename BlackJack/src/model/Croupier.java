@@ -4,7 +4,7 @@ import contrôleur.Partie;
 
 public class  Croupier extends Joueur {
 	
-	private int nbDefaitesConsecutives;
+	private static int nbDefaitesConsecutives;
 	
 	public Croupier() {
 		super();
@@ -21,8 +21,8 @@ public class  Croupier extends Joueur {
 	/**
 	 * @param nbDefaitesConsecutives the nbDefaitesConsecutives to set
 	 */
-	public void setNbDefaitesConsecutives(int nbDefaitesConsecutives) {
-		this.nbDefaitesConsecutives = nbDefaitesConsecutives;
+	public void setNbDefaitesConsecutives(int n) {
+		nbDefaitesConsecutives = n;
 	}
 	
 

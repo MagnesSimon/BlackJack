@@ -130,7 +130,8 @@ public class BlackJack {
 	public String fin()
 	{
 		String result = "";
-		if((joueur.getValeurMain() < croupier.getValeurMain()) && croupier.getValeurMain() <= 21)
+		if((joueur.getValeurMain()>21) || 
+				((joueur.getValeurMain() < croupier.getValeurMain()) && croupier.getValeurMain() <= 21))
 		{
 			result = "Perdu !";
 		}
