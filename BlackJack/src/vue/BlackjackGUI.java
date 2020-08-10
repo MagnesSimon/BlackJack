@@ -23,24 +23,34 @@ import model.*;
 
 public class BlackjackGUI extends JPanel {
 	
+	int defcons =0;
+	// Les JPannels de la fenêtres
 	JPanel top = new JPanel();
 	JPanel carteCroupierPanel = new JPanel();
 	JPanel carteJoueurPanel = new JPanel();
+	JPanel consecutifs = new JPanel();
 	
+	// La zone de texte qui affiche l'état de la partie (Victoire, Défaite, Egalité)
 	JTextPane winLoseBox = new JTextPane();
 	
+	// Les différents boutons qui sont utilisé
 	JButton boutonPiocher = new JButton();
 	JButton boutonDemarrer = new JButton();
 	JButton boutonPasser = new JButton();
 	JButton boutonRecommencer = new JButton();
 	
+	// Affiche les scores du joueur et du croupier et les défaites
 	JLabel labelCroupier = new JLabel();
 	JLabel labelJoueur = new JLabel();
+	JLabel labelDefaitesConsecutives = new JLabel();
 	
-	Joueur croupier = new Joueur();
+	
+	// Le joueur et le croupier
+	Croupier croupier = new Croupier();
 	Joueur joueur = new Joueur();
 	BlackJack partie = new BlackJack(croupier,joueur);
 	
+	// Contient les images des cartes
 	JLabel joueurCarte1;
 	JLabel joueurCarte2;
 	JLabel joueurCartePioche;
@@ -54,6 +64,7 @@ public class BlackjackGUI extends JPanel {
 		top.setBackground(Color.GREEN);
 		carteCroupierPanel.setBackground(Color.GREEN);
 		carteJoueurPanel.setBackground(Color.GREEN);
+		consecutifs.setBackground(Color.GREEN);
 		
 		top.setLayout(new FlowLayout());
 		winLoseBox.setText(" ");
@@ -70,10 +81,9 @@ public class BlackjackGUI extends JPanel {
 				// TODO Auto-generated method stub
 				carteCroupierPanel.add(labelCroupier);
 				carteJoueurPanel.add(labelJoueur);
+				consecutifs.add(labelDefaitesConsecutives);
 				
-				/**
-				 * 
-				 */
+			
 				croupierCarte0 = new JLabel(new ImageIcon("img/cartes/dos.png"));
 				partie.initialisationPartie();
 				
@@ -121,6 +131,7 @@ public class BlackjackGUI extends JPanel {
 				
 				labelCroupier.setText(" Croupier: " + carteCroupier.getValeur());
 				labelJoueur.setText(" Joueur: " + partie.valeurMain(joueur));
+				//labelDefaitesConsecutives.setText("Defaites consécutives du croupier :" + defaiteConsecutives());
 				
 				boutonPiocher.setEnabled(true);
 				boutonPasser.setEnabled(true);
@@ -132,12 +143,17 @@ public class BlackjackGUI extends JPanel {
 					boutonPasser.setEnabled(false);
 					boutonDemarrer.setEnabled(false);
 					boutonRecommencer.setEnabled(true);
-					winLoseBox.setText("Blacjack!");
+					winLoseBox.setText("Blackjack!");
+					//defaiteConsecutives();
 				}
 				
+
+				
+				add(consecutifs,BorderLayout.WEST);
 				add(carteCroupierPanel, BorderLayout.CENTER);
 				add(carteJoueurPanel, BorderLayout.SOUTH);
 			}
+			
 		});
 		
 		/**
@@ -157,7 +173,8 @@ public class BlackjackGUI extends JPanel {
 				
 				if (partie.echec(joueur))
 				{
-					winLoseBox.setText("Echec");
+					winLoseBox.setText(partie.fin());
+					//defaiteConsecutives();
 					boutonPiocher.setEnabled(false);
 					boutonPasser.setEnabled(false);
 					boutonDemarrer.setEnabled(false);
@@ -180,7 +197,7 @@ public class BlackjackGUI extends JPanel {
 				carteCroupierPanel.remove(croupierCarte0);
 				carteCroupierPanel.add(croupierCarte1);
 				
-				croupier = partie.minCroupier();
+				croupier = (Croupier) partie.minCroupier();
 				carteCroupierPanel.removeAll();
 				carteCroupierPanel.add(labelCroupier);
 				labelCroupier.setText(labelCroupier.getText());
@@ -198,6 +215,7 @@ public class BlackjackGUI extends JPanel {
 				labelJoueur.setText("Joueur: " + partie.valeurMain(joueur));
 				
 				winLoseBox.setText(partie.fin());
+				//defaiteConsecutives();
 				boutonPiocher.setEnabled(false);
 				boutonPasser.setEnabled(false);
 				boutonRecommencer.setEnabled(true);
@@ -207,14 +225,17 @@ public class BlackjackGUI extends JPanel {
 		boutonRecommencer.setText("Rejouer");
 		boutonRecommencer.addActionListener(new ActionListener()
 		{
-			@Override
+			@Override 
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				labelCroupier.setText("Croupier: ");
-				labelJoueur.setText("Joueur ");
-				winLoseBox.setText("   ");
+				labelJoueur.setText("Joueur:  ");
 				
-				croupier = new Joueur();
+				defaiteConsecutives();
+				labelDefaitesConsecutives.setText("Victoires Consécutives: " + defcons);
+				
+				
+				croupier = new Croupier();
 				joueur = new Joueur();
 				partie = new BlackJack(croupier, joueur);
 				
@@ -236,12 +257,94 @@ public class BlackjackGUI extends JPanel {
 		
 		carteCroupierPanel.add(labelCroupier);
 		carteJoueurPanel.add(labelJoueur);
+		consecutifs.add(labelDefaitesConsecutives);		
 		
 		setLayout(new BorderLayout());
 		add(top,  BorderLayout.NORTH);
 		add(carteCroupierPanel,  BorderLayout.CENTER);
 		add(carteJoueurPanel,  BorderLayout.SOUTH);
+		add(consecutifs, BorderLayout.WEST);
 	}
+
+	/*
+	protected void startGame() {
+		// TODO Auto-generated method stub
+		
+		carteCroupierPanel.add(labelCroupier);
+		carteJoueurPanel.add(labelJoueur);
+		consecutifs.add(labelDefaitesConsecutives);
+		
+	
+		croupierCarte0 = new JLabel(new ImageIcon("img/cartes/dos.png"));
+		partie.initialisationPartie();
+		
+		Carte carteCroupier = null;
+		Iterator<Carte> cscan =(croupier.getMain()).iterator();
+		int compteC = 0;
+		while (cscan.hasNext())
+		{
+			carteCroupier = cscan.next();
+			if (compteC == 0)
+			{
+				croupierCarte1 = new JLabel(carteCroupier.getImgCarte());
+			}
+			else
+			{
+				croupierCarte2 = new JLabel(carteCroupier.getImgCarte());
+			}
+			compteC ++;
+		}
+		
+		Carte carteJoueur = null;
+		Iterator<Carte> jscan = joueur.getMain().iterator();
+		int compteJ = 0;
+		while (jscan.hasNext())
+		{
+			carteJoueur = jscan.next();
+			if (compteJ == 0)
+			{
+				joueurCarte1 = new JLabel(carteJoueur.getImgCarte());
+			}
+			else
+			{
+				joueurCarte2 = new JLabel(carteJoueur.getImgCarte());
+			}
+			compteJ ++;
+		}
+		
+		carteCroupierPanel.add(croupierCarte0);
+		carteCroupierPanel.add(croupierCarte2);
+		
+		carteJoueurPanel.add(joueurCarte1);
+		carteJoueurPanel.add(joueurCarte2);
+		
+		//System.out.println(carteJoueur + " \n" + carteCroupier);
+		
+		labelCroupier.setText(" Croupier: " + carteCroupier.getValeur());
+		labelJoueur.setText(" Joueur: " + partie.valeurMain(joueur));
+		labelDefaitesConsecutives.setText("Defaites consécutives du croupier :" + defaiteConsecutives());
+		
+		boutonPiocher.setEnabled(true);
+		boutonPasser.setEnabled(true);
+		boutonDemarrer.setEnabled(false);
+		
+		if(partie.blackj())
+		{
+			boutonPiocher.setEnabled(false);
+			boutonPasser.setEnabled(false);
+			boutonDemarrer.setEnabled(false);
+			boutonRecommencer.setEnabled(true);
+			winLoseBox.setText("Blacjack!");
+			defaiteConsecutives();
+		}
+		
+
+		
+		add(consecutifs,BorderLayout.WEST);
+		add(carteCroupierPanel, BorderLayout.CENTER);
+		add(carteJoueurPanel, BorderLayout.SOUTH);
+	}
+	*/
 
 	public void lancerJeu() {
 		// TODO Auto-generated method stub
@@ -253,5 +356,24 @@ public class BlackjackGUI extends JPanel {
 		frame.pack();
 		frame.setVisible(true);
 	}
+	
+	public boolean defaiteConsecutives() {
+		boolean result ;
+		
+		if(partie.fin() == "Victoire !" || partie.blackj()  )
+		{
+			result = true;
+			defcons ++;
+			croupier.setNbDefaitesConsecutives(defcons);
+		}
+		else //if (partie.fin() == "Perdu !")
+		{
+			defcons = 0;
+			croupier.setNbDefaitesConsecutives(defcons);
+			result = false;
+		}
+		//System.out.println("Get: " + croupier.getNbDefaitesConsecutives());
+		return result;
 
+	}
 }
