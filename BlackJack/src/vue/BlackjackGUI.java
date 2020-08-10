@@ -224,6 +224,20 @@ public class BlackjackGUI extends JPanel {
 				boutonRecommencer.setEnabled(false);
 			}
 		});
+		
+		top.add(winLoseBox);
+		top.add(boutonDemarrer);
+		top.add(boutonPiocher);
+		top.add(boutonPasser);
+		top.add(boutonRecommencer);
+		
+		carteCroupierPanel.add(labelCroupier);
+		carteJoueurPanel.add(labelJoueur);
+		
+		setLayout(new BorderLayout());
+		add(top,  BorderLayout.NORTH);
+		add(carteCroupierPanel,  BorderLayout.CENTER);
+		add(carteJoueurPanel,  BorderLayout.SOUTH);
 	}
 
 	public void lancerJeu() {
