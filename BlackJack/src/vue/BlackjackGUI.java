@@ -24,7 +24,9 @@ import model.*;
 public class BlackjackGUI extends JPanel {
 	
 	//Indicateurs des défaites consécutives
-	int defcons =0;
+	int defcons ;
+	static int nbWin ;
+	static int nbGame ;
 	
 	// Les JPannels de la fenêtres
 	JPanel top = new JPanel();
@@ -66,6 +68,10 @@ public class BlackjackGUI extends JPanel {
 	 */
 	public BlackjackGUI()
 	{
+		//this.defcons = 0;
+		//this.nbGame = 0;
+		//this.nbWin = 0;
+		
 		top.setBackground(Color.GREEN);
 		carteCroupierPanel.setBackground(Color.GREEN);
 		carteJoueurPanel.setBackground(Color.GREEN);
@@ -174,7 +180,6 @@ public class BlackjackGUI extends JPanel {
 				if (partie.echec(joueur))
 				{
 					winLoseBox.setText(partie.fin());
-					//defaiteConsecutives();
 					boutonPiocher.setEnabled(false);
 					boutonPasser.setEnabled(false);
 					boutonDemarrer.setEnabled(false);
@@ -231,8 +236,12 @@ public class BlackjackGUI extends JPanel {
 				labelCroupier.setText("Croupier: ");
 				labelJoueur.setText("Joueur:  ");
 				
+				// Appel des différentes méthodes pour les stats
 				defaiteConsecutives();
 				labelDefaitesConsecutives.setText("Victoires Consécutives: " + defcons);
+				Stats.winRate(nbWin, nbGame);
+				
+				nbGame ++;
 				
 				
 				croupier = new Croupier();
@@ -301,4 +310,33 @@ public class BlackjackGUI extends JPanel {
 		}
 		return result;
 	}
+
+	/**
+	 * @return the nbWin
+	 */
+	public static int getNbWin() {
+		return nbWin;
+	}
+
+	/**
+	 * @param nbWin the nbWin to set
+	 */
+	public static void setNbWin(int nb) {
+		nbWin = nb;
+	}
+
+	/**
+	 * @return the nbGame
+	 */
+	public static  int getNbGame() {
+		return nbGame;
+	}
+
+	/**
+	 * @param nbGame the nbGame to set
+	 */
+	public static void setNbGame(int nb) {
+		nbGame = nb;
+	}
+	
 }

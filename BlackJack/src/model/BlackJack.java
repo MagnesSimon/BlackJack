@@ -3,6 +3,7 @@ package model;
 import java.util.Iterator;
 
 import contrôleur.*;
+import vue.BlackjackGUI;
 
 
 public class BlackJack {
@@ -21,6 +22,7 @@ public class BlackJack {
 		croupier = crp;
 		joueur = player;
 		paquet = new Paquet();
+		
 	}
 	
 	/**
@@ -94,6 +96,8 @@ public class BlackJack {
 		{
 			result = true;
 		}
+		
+		BlackjackGUI.setNbGame(BlackjackGUI.getNbGame()+1);
 		return result;
 	}
 	
