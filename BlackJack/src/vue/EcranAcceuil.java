@@ -42,12 +42,14 @@ public class EcranAcceuil extends JFrame {
 	}
 
 	// Bouton
-	JButton bouton2 = new JButton("2 Joueurs.");
-	JButton bouton3 = new JButton("3 Joueurs.");
-	JButton bouton4 = new JButton("4 Joueurs.");
-	JButton bouton5 = new JButton("5 Joueurs.");
+	//JButton bouton2 = new JButton("2 Joueurs.");
+	//JButton bouton3 = new JButton("3 Joueurs.");
+	//JButton bouton4 = new JButton("4 Joueurs.");
+	//JButton bouton5 = new JButton("5 Joueurs.");
 	
 	public JButton boutonStart = new JButton("Start Game !");
+	
+	JButton boutonRegles = new JButton("Règles du blackjack");
 	
 	
 	
@@ -71,10 +73,13 @@ public class EcranAcceuil extends JFrame {
 		
 		// JPannel des bouton pour le nombre de joueur
 		JPanel top = new JPanel();
+		top.add(boutonRegles);
+		/*
 		top.add(bouton2);
 		top.add(bouton3);
 		top.add(bouton4);
 		top.add(bouton5);
+		*/
 		
 		// JPannel pour le bouton Start
 		JPanel bot = new JPanel();
@@ -90,39 +95,17 @@ public class EcranAcceuil extends JFrame {
 		/**
 		 * Definition de l'action des bouton
 		 */
-		bouton2.addActionListener(new ActionListener()
+		
+		boutonRegles.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setNbJoueurs(3);
+				JPanel regles = new JPanel();
+				
+				
 			}
 		});
-		bouton3.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				setNbJoueurs(4);
-			}
-		});
-		bouton4.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				setNbJoueurs(5);
-			}
-		});
-		bouton5.addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				setNbJoueurs(6);
-			}
-		});
-
 	}
 	/**
 	 * Fermer la fenêtre
