@@ -25,8 +25,8 @@ public class BlackjackGUI extends JPanel {
 	
 	//Indicateurs des défaites consécutives
 	int defcons ;
-	static int nbWin ;
-	static int nbGame ;
+	static int nbWin = 0 ;
+	static int nbGame = 0 ;
 	
 	// Les JPannels de la fenêtres
 	JPanel top = new JPanel();
@@ -67,11 +67,7 @@ public class BlackjackGUI extends JPanel {
 	 * Constructeur
 	 */
 	public BlackjackGUI()
-	{
-		//this.defcons = 0;
-		//this.nbGame = 0;
-		//this.nbWin = 0;
-		
+	{		
 		top.setBackground(Color.GREEN);
 		carteCroupierPanel.setBackground(Color.GREEN);
 		carteJoueurPanel.setBackground(Color.GREEN);
@@ -250,9 +246,6 @@ public class BlackjackGUI extends JPanel {
 						+ "Taux de victoire: " + Stats.winRate(nbWin, nbGame)+ "%";
 				
 				labelStats.setText(str);
-					
-				nbGame ++;
-				
 				
 				croupier = new Croupier();
 				joueur = new Joueur();
@@ -306,7 +299,7 @@ public class BlackjackGUI extends JPanel {
 	public boolean defaiteConsecutives() {
 		boolean result ;
 		
-		if(partie.fin() == "Victoire !" || partie.blackj()  )
+		if(winLoseBox.getText() == "Victoire !" || winLoseBox.getText() == "Blackjack!"  )
 		{
 			result = true;
 			defcons ++;
@@ -331,8 +324,8 @@ public class BlackjackGUI extends JPanel {
 	/**
 	 * @param nbWin the nbWin to set
 	 */
-	public static void setNbWin(int nb) {
-		nbWin = nb;
+	public static void setNbWin(int d) {
+		nbWin = d;
 	}
 
 	/**

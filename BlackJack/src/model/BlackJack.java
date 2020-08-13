@@ -94,9 +94,10 @@ public class BlackJack {
 		
 		if(joueur.getValeurMain() == 21)
 		{
+			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
+			System.out.println("hh");
 			result = true;
 		}
-		BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
 
 		return result;
 	}
@@ -152,9 +153,8 @@ public class BlackJack {
 		{
 			result = "Victoire !";
 			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
-		}
-		BlackjackGUI.setNbGame(BlackjackGUI.getNbGame()+1);
-		
+			System.out.println("++");
+		}		
 		return result;
 	}
 

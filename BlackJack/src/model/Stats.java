@@ -18,6 +18,5 @@ public interface Stats {
 		System.out.println(result);
 		
 		return result;
-		 
 	}
 }
