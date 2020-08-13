@@ -11,9 +11,11 @@ import vue.*;
  */
 public interface Stats {
 	
-	public static float winRate(int nbWin, int nbGame) {
-		Float result = (float) 0;
-		result = (float) (nbWin/nbGame);
+	public static double winRate(int nbWin, int nbGame) {
+		double result ;
+		result = (double) (int)nbWin / (int)nbGame;
+		System.out.println("W: " + nbWin + " G:" + nbGame + "   " + nbWin/nbGame);
+		System.out.println(result);
 		
 		return result;
 		 

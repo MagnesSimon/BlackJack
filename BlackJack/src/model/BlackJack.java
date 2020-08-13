@@ -96,8 +96,8 @@ public class BlackJack {
 		{
 			result = true;
 		}
-		
-		BlackjackGUI.setNbGame(BlackjackGUI.getNbGame()+1);
+		BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
+
 		return result;
 	}
 	
@@ -151,7 +151,9 @@ public class BlackJack {
 		else
 		{
 			result = "Victoire !";
+			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
 		}
+		BlackjackGUI.setNbGame(BlackjackGUI.getNbGame()+1);
 		
 		return result;
 	}

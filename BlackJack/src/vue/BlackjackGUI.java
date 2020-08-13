@@ -32,7 +32,8 @@ public class BlackjackGUI extends JPanel {
 	JPanel top = new JPanel();
 	JPanel carteCroupierPanel = new JPanel();
 	JPanel carteJoueurPanel = new JPanel();
-	JPanel consecutifs = new JPanel();
+	JPanel stats = new JPanel();
+
 	
 	// La zone de texte qui affiche l'état de la partie (Victoire, Défaite, Egalité)
 	JTextPane winLoseBox = new JTextPane();
@@ -46,8 +47,7 @@ public class BlackjackGUI extends JPanel {
 	// Affiche les scores du joueur et du croupier et les défaites
 	JLabel labelCroupier = new JLabel();
 	JLabel labelJoueur = new JLabel();
-	JLabel labelDefaitesConsecutives = new JLabel();
-	
+	JLabel labelStats = new JLabel();	
 	
 	// Le joueur et le croupier
 	Croupier croupier = new Croupier();
@@ -75,7 +75,7 @@ public class BlackjackGUI extends JPanel {
 		top.setBackground(Color.GREEN);
 		carteCroupierPanel.setBackground(Color.GREEN);
 		carteJoueurPanel.setBackground(Color.GREEN);
-		consecutifs.setBackground(Color.GREEN);
+		stats.setBackground(Color.GREEN);
 		
 		top.setLayout(new FlowLayout());
 		winLoseBox.setText(" ");
@@ -90,9 +90,11 @@ public class BlackjackGUI extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				nbGame ++;
+				
 				carteCroupierPanel.add(labelCroupier);
 				carteJoueurPanel.add(labelJoueur);
-				consecutifs.add(labelDefaitesConsecutives);
+				stats.add(labelStats);
 				
 			
 				croupierCarte0 = new JLabel(new ImageIcon("img/cartes/dos.png"));
@@ -156,7 +158,7 @@ public class BlackjackGUI extends JPanel {
 					boutonRecommencer.setEnabled(true);
 					winLoseBox.setText("Blackjack!");
 				}	
-				add(consecutifs,BorderLayout.WEST);
+				add(stats,BorderLayout.WEST);
 				add(carteCroupierPanel, BorderLayout.CENTER);
 				add(carteJoueurPanel, BorderLayout.SOUTH);
 			}	
@@ -227,6 +229,9 @@ public class BlackjackGUI extends JPanel {
 			}
 		});
 		
+		/**
+		 * Bouton rejouer
+		 */
 		boutonRecommencer.setText("Rejouer");
 		boutonRecommencer.addActionListener(new ActionListener()
 		{
@@ -236,11 +241,16 @@ public class BlackjackGUI extends JPanel {
 				labelCroupier.setText("Croupier: ");
 				labelJoueur.setText("Joueur:  ");
 				
+
 				// Appel des différentes méthodes pour les stats
 				defaiteConsecutives();
-				labelDefaitesConsecutives.setText("Victoires Consécutives: " + defcons);
-				Stats.winRate(nbWin, nbGame);
 				
+				// String destiné au label stats
+				String str = "<html>Victoire consécutives:" + defcons + "<br/>"
+						+ "Taux de victoire: " + Stats.winRate(nbWin, nbGame)+ "%";
+				
+				labelStats.setText(str);
+					
 				nbGame ++;
 				
 				
@@ -266,13 +276,13 @@ public class BlackjackGUI extends JPanel {
 		
 		carteCroupierPanel.add(labelCroupier);
 		carteJoueurPanel.add(labelJoueur);
-		consecutifs.add(labelDefaitesConsecutives);		
+		stats.add(labelStats);		
 		
 		setLayout(new BorderLayout());
 		add(top,  BorderLayout.NORTH);
 		add(carteCroupierPanel,  BorderLayout.CENTER);
 		add(carteJoueurPanel,  BorderLayout.SOUTH);
-		add(consecutifs, BorderLayout.WEST);
+		add(stats, BorderLayout.WEST);
 	}
 
 	/**
