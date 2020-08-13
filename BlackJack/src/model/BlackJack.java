@@ -11,6 +11,7 @@ public class BlackJack {
 	Joueur croupier;
 	Joueur joueur;
 	Paquet paquet;
+	String resultat;
 	
 	/**
 	 * Constructeurs
@@ -95,7 +96,6 @@ public class BlackJack {
 		if(joueur.getValeurMain() == 21)
 		{
 			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
-			System.out.println("hh");
 			result = true;
 		}
 
@@ -143,17 +143,19 @@ public class BlackJack {
 		if((joueur.getValeurMain()>21) || 
 				((joueur.getValeurMain() < croupier.getValeurMain()) && croupier.getValeurMain() <= 21))
 		{
+			resultat = "Perdu !";
 			result = "Perdu !";
 		}
 		else if((joueur.getValeurMain() == croupier.getValeurMain()) && croupier.getValeurMain() <= 21)
 		{
+			resultat = "Egalité !";
 			result = "Egalité !";
 		}
 		else
 		{
+			resultat = "Victoire !";
 			result = "Victoire !";
 			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
-			System.out.println("++");
 		}		
 		return result;
 	}
@@ -198,6 +200,20 @@ public class BlackJack {
 	 */
 	public void setPaquet(Paquet paquet) {
 		this.paquet = paquet;
+	}
+
+	/**
+	 * @return the resultat
+	 */
+	public String getResultat() {
+		return resultat;
+	}
+
+	/**
+	 * @param resultat the resultat to set
+	 */
+	public void setResultat(String resultat) {
+		this.resultat = resultat;
 	}
 	
 	
