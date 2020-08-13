@@ -48,8 +48,8 @@ public class Regles extends JFrame {
 		this.setVisible(true);
 	}
 
-	public void getRegles() {
+	public  void fermerFenetre() {
 		// TODO Auto-generated method stub
-		new Regles();
+		this.dispose();
 	}
 }

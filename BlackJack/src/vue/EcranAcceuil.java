@@ -102,10 +102,7 @@ public class EcranAcceuil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Regles ecranRegles = new Regles();
-				
-				//ecranRegles.getRegles();
-				
-				
+		
 			}
 		});
 	}

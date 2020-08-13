@@ -20,6 +20,7 @@ public class Partie {
 				BlackjackGUI jeu = new BlackjackGUI();
 				jeu.lancerJeu();
 				home.fermerFenetre();
+
 			}
 		});
 		
