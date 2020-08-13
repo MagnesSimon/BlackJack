@@ -4,7 +4,7 @@ import contrôleur.Partie;
 
 public class  Croupier extends Joueur {
 	
-	private static int nbDefaitesConsecutives;
+	private int nbDefaitesConsecutives;
 	
 	public Croupier() {
 		super();

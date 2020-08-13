@@ -23,7 +23,9 @@ import model.*;
 
 public class BlackjackGUI extends JPanel {
 	
+	//Indicateurs des défaites consécutives
 	int defcons =0;
+	
 	// Les JPannels de la fenêtres
 	JPanel top = new JPanel();
 	JPanel carteCroupierPanel = new JPanel();
@@ -59,6 +61,9 @@ public class BlackjackGUI extends JPanel {
 	JLabel croupierCarte2;
 	JLabel croupierCartePioche;
 	
+	/**
+	 * Constructeur
+	 */
 	public BlackjackGUI()
 	{
 		top.setBackground(Color.GREEN);
@@ -261,6 +266,9 @@ public class BlackjackGUI extends JPanel {
 		add(consecutifs, BorderLayout.WEST);
 	}
 
+	/**
+	 * Methode qui créer et lance a fenêtre du jeu
+	 */
 	public void lancerJeu() {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("Blackjack");
@@ -272,6 +280,10 @@ public class BlackjackGUI extends JPanel {
 		frame.setVisible(true);
 	}
 	
+	/**
+	 * Methode qui donne les victoires consécutives du joueur
+	 * @return le nombre de victoire consécutives
+	 */
 	public boolean defaiteConsecutives() {
 		boolean result ;
 		
@@ -287,8 +299,6 @@ public class BlackjackGUI extends JPanel {
 			croupier.setNbDefaitesConsecutives(defcons);
 			result = false;
 		}
-		//System.out.println("Get: " + croupier.getNbDefaitesConsecutives());
 		return result;
-
 	}
 }

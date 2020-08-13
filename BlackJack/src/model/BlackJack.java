@@ -11,6 +11,11 @@ public class BlackJack {
 	Joueur joueur;
 	Paquet paquet;
 	
+	/**
+	 * Constructeurs
+	 * @param crp Le croupier
+	 * @param player Le joueur
+	 */
 	public BlackJack ( Joueur crp, Joueur player)
 	{
 		croupier = crp;

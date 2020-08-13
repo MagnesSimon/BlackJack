@@ -23,9 +23,6 @@ public class Partie {
 				ecranRegles.dispose();
 			}
 		});
-		
-		//BlackjackGUI jeu = new BlackjackGUI();
-		//jeu.lancerJeu();
 	}
 
 }
