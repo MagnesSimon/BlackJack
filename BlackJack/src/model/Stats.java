@@ -30,7 +30,7 @@ public interface Stats {
 	 * @return le nombre de victoire consécutives
 	 */
 
-	public static int defCons(String s) {
+	public static int vicCons(String s) {
 		int result;
 		
 		if(s == "Victoire !"   )
@@ -45,5 +45,11 @@ public interface Stats {
 			result = BlackjackGUI.getDefcons();
 		}
 		return result;
+	}
+	
+	public static int maxVicCons() {
+		
+		
+		return 0;
 	}
 }

@@ -24,7 +24,7 @@ import model.*;
 public class BlackjackGUI extends JPanel {
 	
 	//Indicateurs des défaites consécutives
-	static int defcons ;
+	static int vicCons ;
 	static int nbWin = 0 ;
 	static int nbGame = 0 ;
 	
@@ -239,10 +239,10 @@ public class BlackjackGUI extends JPanel {
 				
 
 				// Appel des différentes méthodes pour les stats
-				Stats.defCons(partie.getResultat());
+				Stats.vicCons(partie.getResultat());
 				
 				// String destiné au label stats
-				String str = "<html>Victoire consécutives: " + defcons + "<br/>"
+				String str = "<html>Victoire consécutives: " + vicCons + "<br/>"
 						+ "Taux de victoire: " + Stats.winRate(nbWin, nbGame)+ "%";
 				
 				labelStats.setText(str);
@@ -324,14 +324,14 @@ public class BlackjackGUI extends JPanel {
 	/**
 	 * @return the defcons
 	 */
-	public static int getDefcons() {
-		return defcons;
+	public static int getVicCons() {
+		return vicCons;
 	}
 
 	/**
 	 * @param defcons the defcons to set
 	 */
-	public static void setDefcons(int defcons) {
-		BlackjackGUI.defcons = defcons;
+	public static void setVicCons(int vicCons) {
+		BlackjackGUI.vicCons = vicCons;
 	}
 }
