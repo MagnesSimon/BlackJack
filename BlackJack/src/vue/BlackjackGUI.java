@@ -127,11 +127,11 @@ public class BlackjackGUI extends JPanel {
 				carteJoueurPanel.add(joueurCarte1);
 				carteJoueurPanel.add(joueurCarte2);
 				
-				//System.out.println(carteJoueur + " \n" + carteCroupier);
+				
 				
 				labelCroupier.setText(" Croupier: " + carteCroupier.getValeur());
 				labelJoueur.setText(" Joueur: " + partie.valeurMain(joueur));
-				//labelDefaitesConsecutives.setText("Defaites consécutives du croupier :" + defaiteConsecutives());
+				
 				
 				boutonPiocher.setEnabled(true);
 				boutonPasser.setEnabled(true);
@@ -144,16 +144,11 @@ public class BlackjackGUI extends JPanel {
 					boutonDemarrer.setEnabled(false);
 					boutonRecommencer.setEnabled(true);
 					winLoseBox.setText("Blackjack!");
-					//defaiteConsecutives();
-				}
-				
-
-				
+				}	
 				add(consecutifs,BorderLayout.WEST);
 				add(carteCroupierPanel, BorderLayout.CENTER);
 				add(carteJoueurPanel, BorderLayout.SOUTH);
-			}
-			
+			}	
 		});
 		
 		/**
@@ -265,86 +260,6 @@ public class BlackjackGUI extends JPanel {
 		add(carteJoueurPanel,  BorderLayout.SOUTH);
 		add(consecutifs, BorderLayout.WEST);
 	}
-
-	/*
-	protected void startGame() {
-		// TODO Auto-generated method stub
-		
-		carteCroupierPanel.add(labelCroupier);
-		carteJoueurPanel.add(labelJoueur);
-		consecutifs.add(labelDefaitesConsecutives);
-		
-	
-		croupierCarte0 = new JLabel(new ImageIcon("img/cartes/dos.png"));
-		partie.initialisationPartie();
-		
-		Carte carteCroupier = null;
-		Iterator<Carte> cscan =(croupier.getMain()).iterator();
-		int compteC = 0;
-		while (cscan.hasNext())
-		{
-			carteCroupier = cscan.next();
-			if (compteC == 0)
-			{
-				croupierCarte1 = new JLabel(carteCroupier.getImgCarte());
-			}
-			else
-			{
-				croupierCarte2 = new JLabel(carteCroupier.getImgCarte());
-			}
-			compteC ++;
-		}
-		
-		Carte carteJoueur = null;
-		Iterator<Carte> jscan = joueur.getMain().iterator();
-		int compteJ = 0;
-		while (jscan.hasNext())
-		{
-			carteJoueur = jscan.next();
-			if (compteJ == 0)
-			{
-				joueurCarte1 = new JLabel(carteJoueur.getImgCarte());
-			}
-			else
-			{
-				joueurCarte2 = new JLabel(carteJoueur.getImgCarte());
-			}
-			compteJ ++;
-		}
-		
-		carteCroupierPanel.add(croupierCarte0);
-		carteCroupierPanel.add(croupierCarte2);
-		
-		carteJoueurPanel.add(joueurCarte1);
-		carteJoueurPanel.add(joueurCarte2);
-		
-		//System.out.println(carteJoueur + " \n" + carteCroupier);
-		
-		labelCroupier.setText(" Croupier: " + carteCroupier.getValeur());
-		labelJoueur.setText(" Joueur: " + partie.valeurMain(joueur));
-		labelDefaitesConsecutives.setText("Defaites consécutives du croupier :" + defaiteConsecutives());
-		
-		boutonPiocher.setEnabled(true);
-		boutonPasser.setEnabled(true);
-		boutonDemarrer.setEnabled(false);
-		
-		if(partie.blackj())
-		{
-			boutonPiocher.setEnabled(false);
-			boutonPasser.setEnabled(false);
-			boutonDemarrer.setEnabled(false);
-			boutonRecommencer.setEnabled(true);
-			winLoseBox.setText("Blacjack!");
-			defaiteConsecutives();
-		}
-		
-
-		
-		add(consecutifs,BorderLayout.WEST);
-		add(carteCroupierPanel, BorderLayout.CENTER);
-		add(carteJoueurPanel, BorderLayout.SOUTH);
-	}
-	*/
 
 	public void lancerJeu() {
 		// TODO Auto-generated method stub
