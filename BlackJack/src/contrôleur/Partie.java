@@ -11,7 +11,7 @@ public class Partie {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		EcranAcceuil home = new EcranAcceuil();
-		
+		Regles ecranRegles = new Regles();
 		home.boutonStart.addActionListener(new ActionListener()
 		{
 			@Override
@@ -20,7 +20,7 @@ public class Partie {
 				BlackjackGUI jeu = new BlackjackGUI();
 				jeu.lancerJeu();
 				home.fermerFenetre();
-
+				ecranRegles.dispose();
 			}
 		});
 		

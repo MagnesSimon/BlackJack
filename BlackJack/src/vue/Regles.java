@@ -28,26 +28,29 @@ public class Regles extends JFrame {
 			+ "Le chiffre sur la carte équivaut au nombre de point de celle-ci, les figure ont un score de 10.<br/>"
 			+ "L'as vaut 11, et si le score du joueur ou du croupier dépasse 21, l'as vaut 1.</html>";
 	
+	JLabel textRegle = new JLabel(str);
+	
 	public Regles()
 	{
 		this.setTitle("Règles du blackjack");
 		this.setSize(800,200);
 		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setBackground(Color.GRAY);
-
-		
-		JLabel textRegle = new JLabel(str);
-
-		
-		//textRegle.setText(str);
-		//textRegle.setFont(new Font("Helvetica Bold", 1, 20));
-		
+		this.setBackground(Color.GRAY);	
+	}
+	
+	/*
+	 * Affiche la fenêtre des regles
+	 */
+	public void afficherRegles() {
 		container.add(textRegle);
 		this.setContentPane(container);
 		this.setVisible(true);
 	}
-
+	
+	/*
+	 * Ferme la fenêtre
+	 */
 	public  void fermerFenetre() {
 		// TODO Auto-generated method stub
 		this.dispose();

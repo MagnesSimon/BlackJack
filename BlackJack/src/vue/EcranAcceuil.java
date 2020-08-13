@@ -28,24 +28,7 @@ public class EcranAcceuil extends JFrame {
 	String imgUrl="img/blackjack.jpg";
 	ImageIcon icone = new ImageIcon(imgUrl);
 	
-
-	/**
-	 */
-	public void getImgUrl() {
-		System.out.println(imgUrl);
-	}
-	/**
-	 * @param imgUrl the imgUrl to set
-	 */
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
-
-	// Bouton
-	//JButton bouton2 = new JButton("2 Joueurs.");
-	//JButton bouton3 = new JButton("3 Joueurs.");
-	//JButton bouton4 = new JButton("4 Joueurs.");
-	//JButton bouton5 = new JButton("5 Joueurs.");
+	Regles ecranRegles = new Regles();
 	
 	public JButton boutonStart = new JButton("Start Game !");
 	
@@ -67,21 +50,12 @@ public class EcranAcceuil extends JFrame {
 		container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
 
-		// JPannel de l'image
 		JPanel mid = new JPanel();
 		mid.add(label);
 		
-		// JPannel des bouton pour le nombre de joueur
 		JPanel top = new JPanel();
 		top.add(boutonRegles);
-		/*
-		top.add(bouton2);
-		top.add(bouton3);
-		top.add(bouton4);
-		top.add(bouton5);
-		*/
-		
-		// JPannel pour le bouton Start
+
 		JPanel bot = new JPanel();
 		bot.add(boutonStart);
 		
@@ -101,8 +75,7 @@ public class EcranAcceuil extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				Regles ecranRegles = new Regles();
-		
+				ecranRegles.afficherRegles();
 			}
 		});
 	}
@@ -112,6 +85,7 @@ public class EcranAcceuil extends JFrame {
 	public void fermerFenetre()
 	{
 		this.dispose();
+		ecranRegles.dispose();
 	}
 
 	/**
@@ -120,12 +94,22 @@ public class EcranAcceuil extends JFrame {
 	public int getNbJoueurs() {
 		return nbJoueurs;
 	}
-
 	/**
 	 * @param nbJoueurs the nbJoueurs to set
 	 */
 	public void setNbJoueurs(int nbJoueurs) {
 		this.nbJoueurs = nbJoueurs;
 	}
-	
+	/**
+	 * @return l'Url de l'image
+	 */
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	/**
+	 * @param imgUrl the imgUrl to set
+	 */
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 }
