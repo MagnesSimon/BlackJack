@@ -3,6 +3,7 @@ package model;
 import java.util.Iterator;
 
 import contrôleur.*;
+import vue.BlackjackGUI;
 
 
 public class BlackJack {
@@ -10,12 +11,19 @@ public class BlackJack {
 	Joueur croupier;
 	Joueur joueur;
 	Paquet paquet;
+	String resultat;
 	
+	/**
+	 * Constructeurs
+	 * @param crp Le croupier
+	 * @param player Le joueur
+	 */
 	public BlackJack ( Joueur crp, Joueur player)
 	{
 		croupier = crp;
 		joueur = player;
 		paquet = new Paquet();
+		
 	}
 	
 	/**
@@ -87,8 +95,10 @@ public class BlackJack {
 		
 		if(joueur.getValeurMain() == 21)
 		{
+			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
 			result = true;
 		}
+
 		return result;
 	}
 	
@@ -133,17 +143,20 @@ public class BlackJack {
 		if((joueur.getValeurMain()>21) || 
 				((joueur.getValeurMain() < croupier.getValeurMain()) && croupier.getValeurMain() <= 21))
 		{
+			resultat = "Perdu !";
 			result = "Perdu !";
 		}
 		else if((joueur.getValeurMain() == croupier.getValeurMain()) && croupier.getValeurMain() <= 21)
 		{
+			resultat = "Egalité !";
 			result = "Egalité !";
 		}
 		else
 		{
+			resultat = "Victoire !";
 			result = "Victoire !";
-		}
-		
+			BlackjackGUI.setNbWin(BlackjackGUI.getNbWin()+1);
+		}		
 		return result;
 	}
 
@@ -187,6 +200,20 @@ public class BlackJack {
 	 */
 	public void setPaquet(Paquet paquet) {
 		this.paquet = paquet;
+	}
+
+	/**
+	 * @return the resultat
+	 */
+	public String getResultat() {
+		return resultat;
+	}
+
+	/**
+	 * @param resultat the resultat to set
+	 */
+	public void setResultat(String resultat) {
+		this.resultat = resultat;
 	}
 	
 	

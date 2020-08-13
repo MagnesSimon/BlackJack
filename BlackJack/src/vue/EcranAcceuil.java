@@ -69,7 +69,6 @@ public class EcranAcceuil extends JFrame {
 		/**
 		 * Definition de l'action des bouton
 		 */
-		
 		boutonRegles.addActionListener(new ActionListener()
 		{
 			@Override
