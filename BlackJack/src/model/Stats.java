@@ -21,8 +21,10 @@ public interface Stats {
 		double result ;
 		result = (double) (int)nbWin / (int)nbGame;
 		result = result*100;
+		
+		double d = (double) Math.round(result * 100) / 100; // 4.248 --> 4.25
 
-		return result;
+		return d;
 	}
 	
 	/**
