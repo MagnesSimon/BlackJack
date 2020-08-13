@@ -27,6 +27,7 @@ public interface Stats {
 	
 	/**
 	 * Methode qui donne les victoires consécutives du joueur
+	 * @param s l'état de la partie.
 	 * @return le nombre de victoire consécutives
 	 */
 
@@ -47,9 +48,19 @@ public interface Stats {
 		return result;
 	}
 	
-	public static int maxVicCons() {
+	/**
+	 * Methode pour obtenir le nombre de victoire consécutives  
+	 * @param cons Le nombre de victoire consécutives actuelle
+	 * @return Le max de victoire consecutives
+	 */
+	public static int maxVicCons( int cons) {
+		int result = BlackjackGUI.getMaxVicCons();
 		
-		
-		return 0;
+		if(cons > result)
+		{
+			result = cons;
+			BlackjackGUI.setMaxVicCons(cons);
+		}
+		return result;
 	}
 }
