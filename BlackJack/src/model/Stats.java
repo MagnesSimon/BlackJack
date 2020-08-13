@@ -35,14 +35,14 @@ public interface Stats {
 		
 		if(s == "Victoire !"   )
 		{
-			BlackjackGUI.setDefcons(BlackjackGUI.getDefcons() +1);
+			BlackjackGUI.setVicCons(BlackjackGUI.getVicCons() +1);
 			
-			result = BlackjackGUI.getDefcons();
+			result = BlackjackGUI.getVicCons();
 		}
 		else 
 		{
-			BlackjackGUI.setDefcons(0);
-			result = BlackjackGUI.getDefcons();
+			BlackjackGUI.setVicCons(0);
+			result = BlackjackGUI.getVicCons();
 		}
 		return result;
 	}
