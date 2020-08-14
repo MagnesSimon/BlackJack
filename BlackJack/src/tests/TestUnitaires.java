@@ -119,14 +119,14 @@ class TestUnitaires {
 		res = jeu.blackj();
 		if(res == false)
 		{
-			fail("Erreur blackjack invalide");
+			fail("Erreur blackjack invalide (<21)");
 		}
 		
 		j.setValeurMain(22);
 		res = jeu.blackj();
 		if(res == false)
 		{
-			fail("Erreur pas de blackjack");
+			fail("Erreur blackjack invalide (>21)");
 		}
 	}
 }
