@@ -100,7 +100,10 @@ class TestUnitaires {
 			fail("Valeur main invalide");
 		}
 	}
-	
+	/**
+	 * Test la méthode qui vérifie le blackjack
+	 */
+	@Test
 	public final void testBlackj() {
 		boolean res;
 		Joueur j = new Joueur();
@@ -129,7 +132,9 @@ class TestUnitaires {
 			fail("Erreur blackjack invalide (>21)");
 		}
 	}
-	
+	/**
+	 * Test la méthode qui vérifie l'échec
+	 */
 	@Test
 	public final void testEchec()
 	{
@@ -153,4 +158,6 @@ class TestUnitaires {
 			fail("Erreur echec invalide");
 		}
 	}
+	
+	
 }
