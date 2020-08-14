@@ -117,16 +117,40 @@ class TestUnitaires {
 		
 		j.setValeurMain(20);
 		res = jeu.blackj();
-		if(res == false)
+		if(res == true)
 		{
 			fail("Erreur blackjack invalide (<21)");
 		}
 		
 		j.setValeurMain(22);
 		res = jeu.blackj();
-		if(res == false)
+		if(res == true)
 		{
 			fail("Erreur blackjack invalide (>21)");
+		}
+	}
+	
+	@Test
+	public final void testEchec()
+	{
+		boolean res;
+		Joueur j = new Joueur();
+		Croupier c = new Croupier();
+		
+		BlackJack jeu = new BlackJack(c,j);
+		
+		j.setValeurMain(22);
+		res = jeu.echec(j);
+		if (res == false)
+		{
+			fail("Erreur pas d'Echec");
+		}
+		
+		j.setValeurMain(21);
+		res = jeu.echec(j);
+		if (res == true)
+		{
+			fail("Erreurechec invalide");
 		}
 	}
 }
