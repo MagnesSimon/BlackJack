@@ -48,7 +48,6 @@ class TestUnitaires {
 		int a;
 		
 		 a = 5;
-		 b = 10;
 		 if( Stats.maxVicCons(a) <= BlackjackGUI.getNbWin())
 		 {
 			 fail("Erreur comparaison");
