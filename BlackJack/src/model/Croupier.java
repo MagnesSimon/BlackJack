@@ -1,6 +1,6 @@
 package model;
 
-import contrôleur.Partie;
+import controleur.Partie;
 
 public class  Croupier extends Joueur {
 	

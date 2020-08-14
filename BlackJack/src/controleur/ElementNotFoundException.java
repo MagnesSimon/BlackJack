@@ -1,7 +1,5 @@
-/**
- * 
- */
-package contrôleur;
+
+package controleur;
 
 /**
  * @author Simon
