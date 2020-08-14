@@ -2,7 +2,7 @@ package model;
 
 import java.util.Iterator;
 
-import contrôleur.*;
+import controleur.*;
 import vue.BlackjackGUI;
 
 
