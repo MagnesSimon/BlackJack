@@ -158,6 +158,4 @@ class TestUnitaires {
 			fail("Erreur echec invalide");
 		}
 	}
-	
-	
 }
