@@ -150,7 +150,7 @@ class TestUnitaires {
 		res = jeu.echec(j);
 		if (res == true)
 		{
-			fail("Erreurechec invalide");
+			fail("Erreur echec invalide");
 		}
 	}
 }
