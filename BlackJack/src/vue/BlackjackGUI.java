@@ -34,6 +34,7 @@ public class BlackjackGUI extends JPanel {
 	JPanel carteCroupierPanel = new JPanel();
 	JPanel carteJoueurPanel = new JPanel();
 	JPanel stats = new JPanel();
+	
 
 	
 	// La zone de texte qui affiche l'état de la partie (Victoire, Défaite, Egalité)
@@ -44,6 +45,7 @@ public class BlackjackGUI extends JPanel {
 	JButton boutonDemarrer = new JButton();
 	JButton boutonPasser = new JButton();
 	JButton boutonRecommencer = new JButton();
+	JButton boutonRegles = new JButton("Règles du blackjack");
 	
 	// Affiche les scores du joueur et du croupier et les défaites
 	JLabel labelCroupier = new JLabel();
@@ -69,6 +71,8 @@ public class BlackjackGUI extends JPanel {
 	 */
 	public BlackjackGUI()
 	{		
+		Regles ecranRegles = new Regles();
+		
 		top.setBackground(Color.GREEN);
 		carteCroupierPanel.setBackground(Color.GREEN);
 		carteJoueurPanel.setBackground(Color.GREEN);
@@ -263,11 +267,22 @@ public class BlackjackGUI extends JPanel {
 			}
 		});
 		
+
+		boutonRegles.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ecranRegles.afficherRegles();
+			}
+		});
+		
 		top.add(winLoseBox);
 		top.add(boutonDemarrer);
 		top.add(boutonPiocher);
 		top.add(boutonPasser);
 		top.add(boutonRecommencer);
+		top.add(boutonRegles);
 		
 		carteCroupierPanel.add(labelCroupier);
 		carteJoueurPanel.add(labelJoueur);
