@@ -55,7 +55,7 @@ public class BlackjackGUI extends JPanel {
 	// Le joueur et le croupier
 	private Croupier croupier = new Croupier();
 	private Joueur joueur = new Joueur();
-	private BlackJack partie = new BlackJack(croupier,joueur);
+	private Blackjack partie = new Blackjack(croupier,joueur);
 	
 	// Contient les images des cartes
 	private JLabel joueurCarte1;
@@ -255,7 +255,7 @@ public class BlackjackGUI extends JPanel {
 				
 				croupier = new Croupier();
 				joueur = new Joueur();
-				partie = new BlackJack(croupier, joueur);
+				partie = new Blackjack(croupier, joueur);
 				
 				carteCroupierPanel.removeAll();
 				carteJoueurPanel.removeAll();

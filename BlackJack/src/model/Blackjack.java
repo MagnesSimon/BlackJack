@@ -6,7 +6,7 @@ import controleur.*;
 import vue.BlackjackGUI;
 
 
-public class BlackJack {
+public class Blackjack {
 	
 	private Joueur croupier;
 	private Joueur joueur;
@@ -18,7 +18,7 @@ public class BlackJack {
 	 * @param crp Le croupier
 	 * @param player Le joueur
 	 */
-	public BlackJack ( Croupier crp, Joueur player)
+	public Blackjack ( Croupier crp, Joueur player)
 	{
 		croupier = crp;
 		joueur = player;
