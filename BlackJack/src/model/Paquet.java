@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Paquet 
 {
-	private static final int NB_ITERATIONS = 0;
+	// private static final int NB_ITERATIONS = 0;
 	ArrayList<Carte> paquetCartes = new ArrayList<Carte>();
 	
 	/**
