@@ -204,7 +204,7 @@ public class Paquet
 	 * Methode pour obtenir la taille du paquet de cartes
 	 * @return la taille du paquet de cartes
 	 */
-	private double getPaquetSize() {
+	public double getPaquetSize() {
 		// TODO Auto-generated method stub
 		return paquetCartes.size();
 	}
