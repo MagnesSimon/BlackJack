@@ -25,14 +25,14 @@ import javax.swing.JButton;
  
 public class EcranAcceuil extends JFrame {
 	// Image
-	String imgUrl="img/blackjack.jpg";
-	ImageIcon icone = new ImageIcon(imgUrl);
+	private String imgUrl="img/blackjack.jpg";
+	private ImageIcon icone = new ImageIcon(imgUrl);
 	
-	Regles ecranRegles = new Regles();
+	private Regles ecranRegles = new Regles();
 	
-	public JButton boutonStart = new JButton("Start Game !");
+	private JButton boutonStart = new JButton("Start Game !");
 	
-	JButton boutonRegles = new JButton("Règles du blackjack");
+	private JButton boutonRegles = new JButton("Règles du blackjack");
 	
 	
 	
