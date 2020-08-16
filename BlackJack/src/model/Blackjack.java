@@ -8,7 +8,7 @@ import vue.BlackjackGUI;
 
 public class Blackjack {
 	
-	private Joueur croupier;
+	private Croupier croupier;
 	private Joueur joueur;
 	private Paquet paquet;
 	private String resultat;
@@ -170,7 +170,7 @@ public class Blackjack {
 	/**
 	 * @param croupier the croupier to set
 	 */
-	public void setCroupier(Joueur croupier) {
+	public void setCroupier(Croupier croupier) {
 		this.croupier = croupier;
 	}
 
