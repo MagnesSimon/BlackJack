@@ -28,7 +28,7 @@ public class Regles extends JFrame {
 			+ "Le chiffre sur la carte équivaut au nombre de point de celle-ci, les figure ont un score de 10.<br/>"
 			+ "L'as vaut 11, et si le score du joueur ou du croupier dépasse 21, l'as vaut 1.</html>";
 	
-	JLabel textRegle = new JLabel(str);
+	private  JLabel textRegle = new JLabel(str);
 	
 	public Regles()
 	{

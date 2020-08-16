@@ -5,9 +5,9 @@ import java.util.*;
 
 public class Joueur{
 	
-	protected ArrayList<Carte> main;
-	protected int valeurMain;
-	protected int compte;
+	private  ArrayList<Carte> main;
+	private  int valeurMain;
+	private  int compte;
 	
 	/*
 	 * Constructeur
@@ -37,7 +37,7 @@ public class Joueur{
 	 * Methode qui permet de savoir si on possède un as
 	 * @return un boolean qui indique si le joueur a un as ou non
 	 */
-	private boolean asEnMain() {
+	public boolean asEnMain() {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		Carte carte = null;

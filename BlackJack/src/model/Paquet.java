@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 
 public class Paquet 
 {
-	private static final int NB_ITERATIONS = 0;
-	ArrayList<Carte> paquetCartes = new ArrayList<Carte>();
+	// private static final int NB_ITERATIONS = 0;
+	private  ArrayList<Carte> paquetCartes = new ArrayList<Carte>();
 	
 	/**
 	 * Constructeur
@@ -204,7 +204,7 @@ public class Paquet
 	 * Methode pour obtenir la taille du paquet de cartes
 	 * @return la taille du paquet de cartes
 	 */
-	private double getPaquetSize() {
+	public double getPaquetSize() {
 		// TODO Auto-generated method stub
 		return paquetCartes.size();
 	}

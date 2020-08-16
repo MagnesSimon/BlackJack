@@ -6,19 +6,19 @@ import controleur.*;
 import vue.BlackjackGUI;
 
 
-public class BlackJack {
+public class Blackjack {
 	
-	Joueur croupier;
-	Joueur joueur;
-	Paquet paquet;
-	String resultat;
+	private Croupier croupier;
+	private Joueur joueur;
+	private Paquet paquet;
+	private String resultat;
 	
 	/**
 	 * Constructeurs
 	 * @param crp Le croupier
 	 * @param player Le joueur
 	 */
-	public BlackJack ( Croupier crp, Joueur player)
+	public Blackjack ( Croupier crp, Joueur player)
 	{
 		croupier = crp;
 		joueur = player;
@@ -123,8 +123,8 @@ public class BlackJack {
 	 * Le croupier joue tant qu'il n'a pas au moin un score de 18
 	 * @return le score du croupier
 	 */
-	public Joueur minCroupier() {
-		Joueur result = croupier;
+	public Croupier minCroupier() {
+		Croupier result = croupier;
 		
 		while(croupier.getValeurMain() < 17)
 		{
@@ -170,7 +170,7 @@ public class BlackJack {
 	/**
 	 * @param croupier the croupier to set
 	 */
-	public void setCroupier(Joueur croupier) {
+	public void setCroupier(Croupier croupier) {
 		this.croupier = croupier;
 	}
 

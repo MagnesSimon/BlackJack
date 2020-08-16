@@ -1,5 +1,5 @@
 
-package controleur;
+package model;
 
 /**
  * @author Simon

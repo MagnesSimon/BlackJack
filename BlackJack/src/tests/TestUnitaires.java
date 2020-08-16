@@ -75,7 +75,7 @@ class TestUnitaires {
 		Joueur j = new Joueur();
 		Croupier c = new Croupier();
 		
-		BlackJack jeu = new BlackJack(c,j);
+		Blackjack jeu = new Blackjack(c,j);
 		
 		if(jeu.piocher(j) == null)
 		{
@@ -91,7 +91,7 @@ class TestUnitaires {
 		Joueur j = new Joueur();
 		Croupier c = new Croupier();
 		
-		BlackJack jeu = new BlackJack(c,j);
+		Blackjack jeu = new Blackjack(c,j);
 		
 		int res = jeu.valeurMain(j);
 		
@@ -109,7 +109,7 @@ class TestUnitaires {
 		Joueur j = new Joueur();
 		Croupier c = new Croupier();
 		
-		BlackJack jeu = new BlackJack(c,j);
+		Blackjack jeu = new Blackjack(c,j);
 		
 		j.setValeurMain(21);
 		res = jeu.blackj();
@@ -142,7 +142,7 @@ class TestUnitaires {
 		Joueur j = new Joueur();
 		Croupier c = new Croupier();
 		
-		BlackJack jeu = new BlackJack(c,j);
+		Blackjack jeu = new Blackjack(c,j);
 		
 		j.setValeurMain(22);
 		res = jeu.echec(j);

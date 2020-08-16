@@ -23,16 +23,16 @@ import javax.swing.JButton;
 
 
  
-public class EcranAcceuil extends JFrame {
+public class EcranAccueil extends JFrame {
 	// Image
-	String imgUrl="img/blackjack.jpg";
-	ImageIcon icone = new ImageIcon(imgUrl);
+	private String imgUrl="img/blackjack.jpg";
+	private ImageIcon icone = new ImageIcon(imgUrl);
 	
-	Regles ecranRegles = new Regles();
+	private Regles ecranRegles = new Regles();
 	
-	public JButton boutonStart = new JButton("Start Game !");
+	private JButton boutonStart = new JButton("Start Game !");
 	
-	JButton boutonRegles = new JButton("Règles du blackjack");
+	private JButton boutonRegles = new JButton("Règles du blackjack");
 	
 	
 	
@@ -42,7 +42,7 @@ public class EcranAcceuil extends JFrame {
 	// Nombre de joueur
 	private int nbJoueurs = 0;
 
-	public EcranAcceuil(){
+	public EcranAccueil(){
 		this.setTitle("BlackJack");
 		this.setSize(1024,758);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +57,7 @@ public class EcranAcceuil extends JFrame {
 		top.add(boutonRegles);
 
 		JPanel bot = new JPanel();
-		bot.add(boutonStart);
+		bot.add(getBoutonStart());
 		
 		
 		container.add(mid, BorderLayout.CENTER);
@@ -110,5 +110,11 @@ public class EcranAcceuil extends JFrame {
 	 */
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+	public JButton getBoutonStart() {
+		return boutonStart;
+	}
+	public void setBoutonStart(JButton boutonStart) {
+		this.boutonStart = boutonStart;
 	}
 }
