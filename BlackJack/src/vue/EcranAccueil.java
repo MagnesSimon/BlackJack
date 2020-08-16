@@ -23,7 +23,7 @@ import javax.swing.JButton;
 
 
  
-public class EcranAcceuil extends JFrame {
+public class EcranAccueil extends JFrame {
 	// Image
 	private String imgUrl="img/blackjack.jpg";
 	private ImageIcon icone = new ImageIcon(imgUrl);
@@ -42,7 +42,7 @@ public class EcranAcceuil extends JFrame {
 	// Nombre de joueur
 	private int nbJoueurs = 0;
 
-	public EcranAcceuil(){
+	public EcranAccueil(){
 		this.setTitle("BlackJack");
 		this.setSize(1024,758);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
