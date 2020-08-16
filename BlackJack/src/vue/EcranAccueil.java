@@ -57,7 +57,7 @@ public class EcranAccueil extends JFrame {
 		top.add(boutonRegles);
 
 		JPanel bot = new JPanel();
-		bot.add(boutonStart);
+		bot.add(getBoutonStart());
 		
 		
 		container.add(mid, BorderLayout.CENTER);
@@ -110,5 +110,11 @@ public class EcranAccueil extends JFrame {
 	 */
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+	public JButton getBoutonStart() {
+		return boutonStart;
+	}
+	public void setBoutonStart(JButton boutonStart) {
+		this.boutonStart = boutonStart;
 	}
 }

@@ -8,10 +8,10 @@ import vue.BlackjackGUI;
 
 public class BlackJack {
 	
-	Joueur croupier;
-	Joueur joueur;
-	Paquet paquet;
-	String resultat;
+	private Joueur croupier;
+	private Joueur joueur;
+	private Paquet paquet;
+	private String resultat;
 	
 	/**
 	 * Constructeurs
