@@ -123,8 +123,8 @@ public class Blackjack {
 	 * Le croupier joue tant qu'il n'a pas au moin un score de 18
 	 * @return le score du croupier
 	 */
-	public Joueur minCroupier() {
-		Joueur result = croupier;
+	public Croupier minCroupier() {
+		Croupier result = croupier;
 		
 		while(croupier.getValeurMain() < 17)
 		{
