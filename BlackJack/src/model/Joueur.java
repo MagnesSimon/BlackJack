@@ -5,9 +5,9 @@ import java.util.*;
 
 public class Joueur{
 	
-	protected ArrayList<Carte> main;
-	protected int valeurMain;
-	protected int compte;
+	private  ArrayList<Carte> main;
+	private  int valeurMain;
+	private  int compte;
 	
 	/*
 	 * Constructeur
