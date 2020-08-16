@@ -30,41 +30,41 @@ public class BlackjackGUI extends JPanel {
 	private static int maxVicCons = 0;
 	
 	// Les JPannels de la fenêtres
-	JPanel top = new JPanel();
-	JPanel carteCroupierPanel = new JPanel();
-	JPanel carteJoueurPanel = new JPanel();
-	JPanel stats = new JPanel();
+	private JPanel top = new JPanel();
+	private JPanel carteCroupierPanel = new JPanel();
+	private JPanel carteJoueurPanel = new JPanel();
+	private JPanel stats = new JPanel();
 	
 
 	
 	// La zone de texte qui affiche l'état de la partie (Victoire, Défaite, Egalité)
-	JTextPane winLoseBox = new JTextPane();
+	private JTextPane winLoseBox = new JTextPane();
 	
 	// Les différents boutons qui sont utilisé
-	JButton boutonPiocher = new JButton();
-	JButton boutonDemarrer = new JButton();
-	JButton boutonPasser = new JButton();
-	JButton boutonRecommencer = new JButton();
-	JButton boutonRegles = new JButton("Règles du blackjack");
+	private JButton boutonPiocher = new JButton();
+	private JButton boutonDemarrer = new JButton();
+	private JButton boutonPasser = new JButton();
+	private JButton boutonRecommencer = new JButton();
+	private JButton boutonRegles = new JButton("Règles du blackjack");
 	
 	// Affiche les scores du joueur et du croupier et les défaites
-	JLabel labelCroupier = new JLabel();
-	JLabel labelJoueur = new JLabel();
-	JLabel labelStats = new JLabel();	
+	private JLabel labelCroupier = new JLabel();
+	private JLabel labelJoueur = new JLabel();
+	private JLabel labelStats = new JLabel();	
 	
 	// Le joueur et le croupier
-	Croupier croupier = new Croupier();
-	Joueur joueur = new Joueur();
-	BlackJack partie = new BlackJack(croupier,joueur);
+	private Croupier croupier = new Croupier();
+	private Joueur joueur = new Joueur();
+	private BlackJack partie = new BlackJack(croupier,joueur);
 	
 	// Contient les images des cartes
-	JLabel joueurCarte1;
-	JLabel joueurCarte2;
-	JLabel joueurCartePioche;
-	JLabel croupierCarte0;
-	JLabel croupierCarte1;
-	JLabel croupierCarte2;
-	JLabel croupierCartePioche;
+	private JLabel joueurCarte1;
+	private JLabel joueurCarte2;
+	private JLabel joueurCartePioche;
+	private JLabel croupierCarte0;
+	private JLabel croupierCarte1;
+	private JLabel croupierCarte2;
+	private JLabel croupierCartePioche;
 	
 	/**
 	 * Constructeur
