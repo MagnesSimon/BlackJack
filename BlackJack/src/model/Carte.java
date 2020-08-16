@@ -8,10 +8,10 @@ public class Carte {
 	 * Les 4 éléments de la cartes
 	 * La couleur, Le numero, La valeur utilisé pour les points, et l'image utilisé pour la GUI
 	 */
-	protected String couleur;
-	protected String numero;
-	protected int valeur;
-	protected ImageIcon imgCarte;
+	private  String couleur;
+	private  String numero;
+	private  int valeur;
+	private  ImageIcon imgCarte;
 	
 	/**
 	 * Constructeur de base
