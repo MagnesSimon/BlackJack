@@ -37,7 +37,7 @@ public class Joueur{
 	 * Methode qui permet de savoir si on possède un as
 	 * @return un boolean qui indique si le joueur a un as ou non
 	 */
-	private boolean asEnMain() {
+	public boolean asEnMain() {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		Carte carte = null;
